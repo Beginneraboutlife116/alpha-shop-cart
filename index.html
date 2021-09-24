@@ -7,6 +7,175 @@
     <title>Alpha Shop Cart</title>
   </head>
   <body>
-    
+    <div id="cart-app">
+      <div class="main-container">
+        <header>
+          <input type="checkbox" id="nav-toggle-checkbox" />
+          <label for="nav-toggle-checkbox" class="nav-toggle">test</label>
+          <nav>
+            <ul class="nav-menu">
+              <li class="nav-menu-list">男款</li>
+              <li class="nav-menu-list">女款</li>
+              <li class="nav-menu-list">最新消息</li>
+              <li class="nav-menu-list">聯絡我們</li>
+              <li class="nav-menu-list">客製商品</li>
+            </ul>
+            <div class="nav-icons">
+              <input type="checkbox" id="search" />
+              <label
+                for="search"
+                class="nav-icons-search"
+                aria-label="search clothes"
+              >
+                <div class="search-icon"></div>
+              </label>
+              <a href="/" class="nav-icons-cart">
+                <div class="cart-icon"></div>
+              </a>
+              <div class="nav-icons-darkmode"></div>
+              <input
+                type="text"
+                class="nav-searchbar"
+                placeholder="e.g T-shirts"
+              />
+            </div>
+          </nav>
+          <div class="logo-block"></div>
+        </header>
+        <p class="title">結帳</p>
+        <div class="main-content">
+          <div class="step-container">
+            <div class="step">
+              <div class="step-circle"></div>
+              <div class="step-info">寄送地址</div>
+            </div>
+            <div class="step">
+              <div class="step-circle"></div>
+              <span class="step-line"></span>
+              <div class="step-info">運送方式</div>
+            </div>
+            <div class="step">
+              <div class="step-circle"></div>
+              <span class="step-line"></span>
+              <div class="step-info">付款資訊</div>
+            </div>
+          </div>
+          <form id="form-content">
+            <div class="form-part">
+              <p class="part-titel">寄送地址</p>
+              <div class="address-form">
+                <div class="form-row">
+                  <label for="mrms" class="mrms" aria-label="choose Mr. or Miss"
+                    >稱謂</label
+                  >
+                  <div class="select-wrapper">
+                    <select name="mrms" id="mrms">
+                      <option value="Mr.">先生</option>
+                      <option value="Ms.">小姐</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="name" class="name" aria-label="enter your name"
+                    >姓名</label
+                  >
+                  <input type="text" id="name" placeholder="請輸入姓名" />
+                </div>
+                <div class="form-row">
+                  <label
+                    for="tel"
+                    class="tel"
+                    aria-label="enter your mobile phone number"
+                    >電話</label
+                  >
+                  <input type="text" id="tel" placeholder="請輸入行動電話" />
+                </div>
+                <div class="form-row">
+                  <label
+                    for="email"
+                    class="email"
+                    aria-label="enter your email address"
+                    >Email</label
+                  >
+                  <input type="email" id="email" />
+                </div>
+                <div class="form-row">
+                  <label
+                    for="city"
+                    class="city"
+                    aria-label="select your city location"
+                    >縣市</label
+                  >
+                  <div class="select-wrapper">
+                    <select name="city" id="city">
+                      <option value="" disabled selected>請選擇縣市</option>
+                      <option value="taipei">台北</option>
+                      <option value="taichung">台中</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label
+                    for="address"
+                    class="address"
+                    aria-label="enter your local address"
+                    >地址</label
+                  >
+                  <input type="text" id="address" placeholder="請輸入地址" />
+                </div>
+              </div>
+            </div>
+            <div class="form-part">
+              <p class="part-titel">運送方式</p>
+              <div class="delivery-form">
+                <label for="standard-way" class="delivery-method" aria-label="choose standard delivery way">
+                  <input type="checkbox" id="standard-way">
+                  <div class="standard-info">
+                    <div>
+                      <p>標準運送</p>
+                      <p>免費</p>
+                    </div>
+                    <p>約3 - 7個工作天</p>
+                  </div>
+                </label>
+                <label for="dhl-way" class="delivery-method" aria-label="choose dhl delivery way">
+                  <input type="checkbox" id="dhl-way">
+                  <div class="dhl-info">
+                    <div>
+                      <p>DHL 貨運</p>
+                      <p>$500</p>
+                    </div>
+                    <p>48 小時內送達</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="form-part">
+              <p class="part-titel">付款資訊</p>
+              <div class="payment-form">
+                <div class="form-row">
+                  <label for="holder" class="card-holder" aria-label="enter the name on the credit card">持卡人姓名</label>
+                  <input type="text" id="holder" placeholder="John Doe">
+                </div>
+                <div class="form-row">
+                  <label for="num" class="card-num" aria-label="enter your card's number">卡號</label>
+                  <input type="text" id="num" placeholder="1111 2222 3333 4444">
+                </div>
+                <div class="form-row">
+                  <label for="date" class="valid-date" aria-label="choose the valid date">有效期限</label>
+                  <input type="date" id="date" placeholder="MM/YY">
+                </div>
+                <div class="form-row">
+                  <label for="key" class="card-key" aria-label="enter your CVC or CCV">CVC / CCV</label>
+                  <input type="text" id="key">
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="cart-content"></div>
+        </div>
+      </div>
+      <footer></footer>
+    </div>
   </body>
 </html>
