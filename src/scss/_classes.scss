@@ -14,6 +14,22 @@ $ai-space: (
   "stretch": stretch
 );
 
+$displaySet: (
+  "flex": flex,
+  "grid": grid,
+  "none": none,
+  "inline": inline,
+  "inline-block": inline-block,
+);
+
+@each $prop, $abbr in (display: d) {
+  @each $key, $val in $displaySet {
+    .#{$abbr}-#{$key} {
+      #{$prop}: $val;
+    }
+  }
+}
+
 @each $prop, $abbr in (justify-content: jc) {
   @each $key, $val in $jc-space {
     .#{$abbr}-#{$key} {
