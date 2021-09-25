@@ -21,11 +21,15 @@ module.exports = {
       {
         test: /\.png/,
         type: 'asset/resource'
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
       }
     ]
   },
   plugins: [new MiniCssExtractPlugin(), new HtmlWebpackPlugin({
-    template: 'index.html'
+    template: './index.html'
   })],
   devtool: 'source-map'
 };
