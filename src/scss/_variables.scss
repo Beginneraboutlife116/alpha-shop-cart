@@ -1,50 +1,40 @@
 // colors
-$color-for-light-mode-1: #2a2a2a;
-$color-for-light-mode-2: #afb1bd;
-$color-for-light-mode-3: #4a4a4a;
-$color-for-light-mode-4: #808080;
-$color-for-light-mode-5: #999;
-$color-for-light-mode-6: #f0f0f5;
-$color-for-light-mode-7: #222;
-$colro-for-light-mode-8: #e6e6eb;
-$color-for-light-mode-9: rgba(42, 42, 42, 0.1);
-$black: #000;
-$white: #fff;
-$step-color: #333;
 $main-button-color: #f67599;
-$color-for-dark-mode-1: $white;
-$color-for-dark-mode-2: #5e5e5e;
-$color-for-dark-mode-3: #383838;
-
-// opacity
-$opacity-1: 0.2;
-$opacity-2: 0.4;
-$opacity-3: 0.6;
-$opacity-4: 0.8;
 
 // setting
 :root {
-  --basic-font-color: $color-for-light-mode-1;
-  --step-connect-line-color: $black;
-  --input-border: $color-for-light-mode-5;
-  --cart-border: $color-for-light-mode-6;
-  --cart-button-color: $color-for-light-mode-6;
-  --cart-button-content: $black;
-  --opacity-of-form-fonts: 1;
-  --opacity-of-nav-icons: 1;
-  --opacity-of-cart-border: 1;
-  --opacity-of-footer-fonts-and-icons: 1;
+  --body-bg: white;
+  --basic-color: #2a2a2a;
+  --intensive-color: black;
+  --step-processing-connect-line-color: black;
+  --step-circle-unfinished-color: #afb1bd;
+  --input-border: #a4a4a4;
+  --input-description: #808080;
+  --input-placeholder: #999;
+  --input-select: #2a2a2a;
+  --box-unchecked-bg: white;
+  --box-checked-bg: #2a2a2a;
+  --unchecked-border: #f0f0f5;
+  --checked-border: #2a2a2a;
+  --cart-border: #f0f0f5;
+  --cart-button-color: #f0f0f5;
+  --cart-button-content: black;
 }
 
 .darkmode {
-  --basic-font-color: $white;
-  --step-connect-line-color: $white;
-  --input-border: $color-for-dark-mode-2;
-  --cart-border: $color-for-dark-mode-3;
-  --cart-button-color: $color-for-light-mode-4;
-  --cart-button-content: $step-color;
-  --opacity-of-form-fonts: $opacity-2;
-  --opacity-of-nav-icons: $opacity-4;
-  --opacity-of-cart-border: $opacity-1;
-  --opacity-of-footer-fonts-and-icons: $opacity-3;
+  --body-bg: #121212;
+  --basic-color: white;
+  --intensive-color: white;
+  --step-processing-connect-line-color: white;
+  --step-circle-unfinished-color: white;
+  --input-border: #5e5e5e;
+  --input-description: white;
+  --input-select: #5e5e5e;
+  --box-unchecked-bg: #333;
+  --box-checked-bg: #333;
+  --unchecked-border: #5e5e5e;
+  --checked-border: white;
+  --cart-border: rgba(255, 255, 255, 0.2);
+  --cart-button-color: #808080;
+  --cart-button-content: #333;
 }

@@ -1,0 +1,39 @@
+$jc-space: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly
+);
+
+$ai-space: (
+  "start": start,
+  "end": end,
+  "center": center,
+  "stretch": stretch
+);
+
+@each $prop, $abbr in (justify-content: jc) {
+  @each $key, $val in $jc-space {
+    .#{$abbr}-#{$key} {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@each $prop, $abbr in (align-items: ai) {
+  @each $key, $val in $ai-space {
+    .#{$abbr}-#{$key} {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@each $prop, $abbr in (opacity: o) {
+  @for $i from 1 through 10 {
+    .#{$abbr}-#{$i} {
+      #{$prop}: 0.1 * $i;
+    }
+  }
+}
