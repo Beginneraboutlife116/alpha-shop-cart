@@ -1,40 +1,50 @@
+// colors
+$main-button-color: #f67599;
+$basic-dark: #2a2a2a;
+$black: black;
+$white: white;
+$gray-1: #f0f0f5;
+$gray-2: #afb1bd;
+$gray-3: #a4a4a4;
+$gray-4: #808080;
+$gray-5: #999;
+$gray-6: #5e5e5e;
+$gray-7: #333;
+
 // setting
 :root {
   --body-bg: white;
-  --basic-color: #2a2a2a;
-  --intensive-color: black;
-  --step-processing-connect-line-color: black;
-  --step-circle-unfinished-color: #afb1bd;
-  --input-border: #a4a4a4;
-  --input-description: #808080;
-  --input-placeholder: #999;
-  --input-select: #2a2a2a;
-  --box-unchecked-bg: white;
-  --box-checked-bg: #2a2a2a;
-  --unchecked-border: #f0f0f5;
-  --checked-border: #2a2a2a;
-  --cart-border: #f0f0f5;
-  --cart-button-color: #f0f0f5;
-  --cart-button-content: black;
+  --basic-color: #{$basic-dark};
+  --intensive-color: #{$black};
+  --step-processing-connect-line-color: #{$black};
+  --step-circle-unfinished-color: #{$gray-2};
+  --input-border: #{$gray-3};
+  --input-description: #{$gray-4};
+  --input-placeholder: #{$gray-5};
+  --input-select: #{$basic-dark};
+  --box-unchecked-bg: #{$white};
+  --box-checked-bg: #{$basic-dark};
+  --unchecked-border: #{$gray-1};
+  --checked-border: #{$basic-dark};
+  --cart-border: #{$gray-1};
+  --cart-button-color: #{$gray-1};
+  --cart-button-content: #{$black};
 }
 
 .darkmode {
   --body-bg: #121212;
-  --basic-color: white;
-  --intensive-color: white;
-  --step-processing-connect-line-color: white;
-  --step-circle-unfinished-color: white;
-  --input-border: #5e5e5e;
-  --input-description: white;
-  --input-select: #5e5e5e;
-  --box-unchecked-bg: #333;
-  --box-checked-bg: #333;
-  --unchecked-border: #5e5e5e;
-  --checked-border: white;
+  --basic-color: #{$white};
+  --intensive-color: #{$white};
+  --step-processing-connect-line-color: #{$white};
+  --step-circle-unfinished-color: #{$white};
+  --input-border: #{$gray-6};
+  --input-description: #{$white};
+  --input-select: #{$gray-6};
+  --box-unchecked-bg: #{$gray-7};
+  --box-checked-bg: #{$gray-7};
+  --unchecked-border: #{$gray-6};
+  --checked-border: #{$white};
   --cart-border: rgba(255, 255, 255, 0.2);
-  --cart-button-color: #808080;
-  --cart-button-content: #333;
+  --cart-button-color: #{$gray-4};
+  --cart-button-content: #{$gray-7};
 }
-
-// colors
-$main-button-color: #f67599;
