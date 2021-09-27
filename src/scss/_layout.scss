@@ -1,0 +1,9 @@
+%makeItselfCenter{
+  margin: 0 auto;
+}
+
+%makeInnerCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -20,6 +20,7 @@ $displaySet: (
   "none": none,
   "inline": inline,
   "inline-block": inline-block,
+  "block": block,
 );
 
 @each $prop, $abbr in (display: d) {

@@ -10,10 +10,10 @@
     <div id="cart-app">
       <div class="main-container">
         <header>
-          <input type="checkbox" id="nav-toggle-checkbox" />
-          <label for="nav-toggle-checkbox" class="nav-toggle"
-            >這邊做before, after樣式</label
-          >
+          <label for="nav-toggle-checkbox" class="nav-toggle-box">
+            <span class="nav-toggle"></span>
+          </label>
+          <input type="checkbox" id="nav-toggle-checkbox" class="d-none"/>
           <nav>
             <ul class="nav-menu">
               <li class="nav-menu-list">男款</li>
@@ -22,8 +22,7 @@
               <li class="nav-menu-list">聯絡我們</li>
               <li class="nav-menu-list">客製商品</li>
             </ul>
-            <div class="nav-icons">
-              <input type="checkbox" id="search" />
+            <div class="nav-icons d-flex jc-between">
               <label
                 for="search"
                 class="nav-icons-search"
@@ -35,15 +34,19 @@
                 <div class="cart-icon"></div>
               </a>
               <div class="nav-icons-darkmode"></div>
-              <input
+              
+            </div>
+            <input type="checkbox" id="search" class="d-none"/>
+            <input
                 type="text"
-                class="nav-searchbar"
+                class="nav-search-bar d-block"
                 placeholder="e.g T-shirts"
               />
-            </div>
           </nav>
           <div class="logo-block">
-            <img src="./src/images/lightmode-icon/Logo@2x.png" alt="" class="logo-img">
+            <a href="#">
+              <img src="./src/images/lightmode-icon/Logo@2x.png" alt="" class="logo-img">
+            </a>
           </div>
         </header>
         <p class="title">結帳</p>
