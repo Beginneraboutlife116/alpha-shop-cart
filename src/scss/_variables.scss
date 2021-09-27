@@ -29,9 +29,9 @@ $gray-7: #333;
   --cart-border: #{$gray-1};
   --cart-button-color: #{$gray-1};
   --cart-button-content: #{$black};
-  --search-icon: url(../images/lightmode-icon/Icon@search.png);
-  --cart-icon: url(../images/lightmode-icon/Icon@cart.png);
-  --darkmode-icon: url(../images/lightmode-icon/Group@moon.png);
+  --search-icon: url(../images/lightmode-icon/icon-search.png);
+  --cart-icon: url(../images/lightmode-icon/icon-cart.png);
+  --darkmode-icon: url(../images/lightmode-icon/icon-moon.png);
 }
 
 .darkmode {
@@ -50,7 +50,7 @@ $gray-7: #333;
   --cart-border: rgba(255, 255, 255, 0.2);
   --cart-button-color: #{$gray-4};
   --cart-button-content: #{$gray-7};
-  --search-icon: url(../images/darkmode-icon/Icon@searchDarkmode.png);
-  --cart-icon: url(../images/darkmode-icon/Icon@cartDarkmode.png);
-  --darkmode-icon: url(../images/darkmode-icon/icon@Sun.png);
+  --search-icon: url(../images/darkmode-icon/icon-search-dark.png);
+  --cart-icon: url(../images/darkmode-icon/icon-cart-dark.png);
+  --darkmode-icon: url(../images/darkmode-icon/icon-sun.png);
 }
