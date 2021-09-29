@@ -1,5 +1,5 @@
 @mixin breakpoint($bp: 375px) {
-  @media (min-width: 375px) {
+  @media (min-width: $bp) {
     @content;
   }
 }

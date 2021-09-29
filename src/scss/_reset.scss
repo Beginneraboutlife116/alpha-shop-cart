@@ -54,4 +54,8 @@ input:required {
 input:invalid {
   box-shadow: none;
 }
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
 /*reset end*/

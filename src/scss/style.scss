@@ -132,81 +132,90 @@ body {
       font-size: $font-size-xl;
     }
   }
-  .content__stepper {
-    padding: 24px 0;
-    &-step {
-      position: relative;
-      &--circle {
-        @extend %makeInnerCenter;
-        width: $space-xl;
-        height: $space-xl;
-        border-radius: 50%;
-        border: 1px solid var(--step-circle-unfinished-color);
-        @include breakpoint {
-          width: $space-lg;
-          height: $space-lg;
-        }
-        & span {
-          font-size: $font-size-md;
-          color: var(--step-circle-unfinished-color);
+  .content {
+    &__stepper {
+      padding: 24px 0;
+      &-step {
+        position: relative;
+        &--circle {
+          @extend %makeInnerCenter;
+          width: $space-xl;
+          height: $space-xl;
+          border-radius: 50%;
+          border: 1px solid var(--step-circle-unfinished-color);
           @include breakpoint {
-            font-size: $font-size-xs;
+            width: $space-lg;
+            height: $space-lg;
+          }
+          & span {
+            font-size: $font-size-md;
+            color: var(--step-circle-unfinished-color);
+            @include breakpoint {
+              font-size: $font-size-xs;
+            }
           }
         }
-      }
-      &--info {
-        display: none;
-        @include breakpoint {
-          display: block;
-          margin-left: ($space-basic / 2);
-          color: var(--step-circle-unfinished-color);
-        }
-      }
-    }
-    .checked {
-      color: $gray-7;
-      .content__stepper-step--circle {
-        background-color: $gray-7;
-        & span {
+        &--info {
           display: none;
-        }
-        &::after {
-          content: '';
-          width: 20px;
-          height: 20px;
-          background-image: url('../images/icon-check.png');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: 0;
           @include breakpoint {
-            width: 16px;
-            height: 16px;
+            display: block;
+            margin-left: ($space-basic / 2);
+            color: var(--step-circle-unfinished-color);
           }
         }
       }
-      & + span {
-        background-color: var(--basic-color);
+      .checked {
+        color: $gray-7;
+        .content__stepper-step--circle {
+          background-color: $gray-7;
+          & span {
+            display: none;
+          }
+          &::after {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-image: url("../images/icon-check.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 0;
+            @include breakpoint {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+        & + span {
+          background-color: var(--basic-color);
+        }
+        .content__stepper-step--info {
+          color: var(--basic-color);
+        }
       }
-      .content__stepper-step--info {
-        color: var(--basic-color);
+      .active {
+        .content__stepper-step--circle {
+          border-color: var(--basic-color);
+        }
+        & span {
+          color: var(--basic-color);
+        }
+      }
+      &--line {
+        display: block;
+        width: 60px;
+        height: 2px;
+        background-color: var(--step-circle-unfinished-color);
+      }
+      @include breakpoint {
+        padding: 48px 0 64px;
       }
     }
-    .active {
-      .content__stepper-step--circle {
-        border-color: var(--basic-color);
-      }
-      & span {
-        color: var(--basic-color);
+    &__form {
+      &-part {
+        
       }
     }
-    &--line {
-      display: block;
-      width: 60px;
-      height: 2px;
-      background-color: var(--step-circle-unfinished-color);
-    }
-    @include breakpoint {
-      padding: 48px 0 64px;
-    }
+    &__cart {}
+    .btn {}
   }
 }
