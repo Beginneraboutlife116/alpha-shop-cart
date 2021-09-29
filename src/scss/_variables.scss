@@ -10,6 +10,7 @@ $gray-4: #808080;
 $gray-5: #999;
 $gray-6: #5e5e5e;
 $gray-7: #333;
+$gray-8: #e6e6eb;
 
 // setting
 :root {
@@ -29,6 +30,7 @@ $gray-7: #333;
   --cart-border: #{$gray-1};
   --cart-button-content: #{$black};
   --cart-info-border: #{$gray-1};
+  --cart-button-divider: #{$gray-8};
   --search-icon: url(../images/lightmode-icon/icon-search.png);
   --cart-icon: url(../images/lightmode-icon/icon-cart.png);
   --darkmode-icon: url(../images/lightmode-icon/icon-moon.png);
@@ -52,6 +54,7 @@ $gray-7: #333;
   --cart-border: rgba(255, 255, 255, 0.2);
   --cart-button-content: #{$gray-7};
   --cart-info-border: #{$white};
+  --cart-button-divider: rgba(255, 255, 255, 0.2);
   --search-icon: url(../images/darkmode-icon/icon-search-dark.png);
   --cart-icon: url(../images/darkmode-icon/icon-cart-dark.png);
   --darkmode-icon: url(../images/darkmode-icon/icon-sun.png);
