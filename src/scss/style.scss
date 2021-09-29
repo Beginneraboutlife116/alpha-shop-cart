@@ -26,15 +26,15 @@ body {
   margin: 0 15px 40px;
 }
 
-header {
+.header {
   position: relative;
   padding: 20px 0;
   height: 55px;
-  .nav-toggle-box {
+  .nav__toggle-box {
     display: block;
     width: 20px;
     height: 15px;
-    .nav-toggle {
+    &--icon {
       display: inherit;
       position: relative;
       width: 100%;
@@ -61,11 +61,11 @@ header {
     }
   }
 
-  #nav-toggle-checkbox:checked + nav {
+  #nav__toggle-checkbox:checked + nav {
     transform: scaleY(1);
   }
 
-  nav {
+  .nav {
     position: absolute;
     top: calc(100% - 10px);
     width: 100%;
@@ -74,27 +74,27 @@ header {
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.25s;
-    .nav-menu-list {
+    &__menu-list {
       height: 90px;
       @extend %makeInnerCenter;
       border-bottom: 2px solid rgba(42, 42, 42, 0.1);
     }
-    .nav-icons {
+    &__menu-icons {
       width: 150px;
       margin: 0 auto;
       padding-top: 24px;
-      .search-icon {
+      &-search--png {
         @include iconSetting(--search-icon);
       }
-      .cart-icon {
+      &-cart--png {
         @include iconSetting(--cart-icon);
       }
-      .nav-icons-darkmode {
+      &-darkmode--png {
         @include iconSetting(--darkmode-icon);
       }
     }
     // 施作search-bar的input
-    .nav-search-bar {
+    &__search-bar {
       margin: 24px auto;
       padding: 12px 24px;
       border-radius: 99em;
@@ -103,12 +103,12 @@ header {
       transform: scaleX(0);
       border: 1px solid var(--input-border);
     }
-    #search:checked + .nav-search-bar {
+    #search:checked + .nav__search-bar {
       transform: scaleX(1);
     }
   }
 
-  .logo-block {
+  &__logo-block {
     width: 140px;
     height: 25px;
     position: absolute;

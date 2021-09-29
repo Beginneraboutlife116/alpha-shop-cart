@@ -8,71 +8,71 @@
   </head>
   <body>
     <div id="cart-app">
-      <div class="main-container">
-        <header>
-          <label for="nav-toggle-checkbox" class="nav-toggle-box">
-            <span class="nav-toggle"></span>
+      <main class="main-container">
+        <header class="header">
+          <label for="nav__toggle-checkbox" class="nav__toggle-box">
+            <span class="nav__toggle-box--icon"></span>
           </label>
-          <input type="checkbox" id="nav-toggle-checkbox" class="d-none"/>
-          <nav>
-            <ul class="nav-menu">
-              <li class="nav-menu-list">男款</li>
-              <li class="nav-menu-list">女款</li>
-              <li class="nav-menu-list">最新消息</li>
-              <li class="nav-menu-list">聯絡我們</li>
-              <li class="nav-menu-list">客製商品</li>
+          <input type="checkbox" id="nav__toggle-checkbox" class="d-none"/>
+          <nav class="nav">
+            <ul class="nav__menu">
+              <li class="nav__menu-list">男款</li>
+              <li class="nav__menu-list">女款</li>
+              <li class="nav__menu-list">最新消息</li>
+              <li class="nav__menu-list">聯絡我們</li>
+              <li class="nav__menu-list">客製商品</li>
             </ul>
-            <div class="nav-icons d-flex jc-between">
+            <div class="nav__menu-icons d-flex jc-between">
               <label
                 for="search"
-                class="nav-icons-search"
+                class="nav__menu-icons-search"
                 aria-label="search clothes"
               >
-                <div class="search-icon"></div>
+                <div class="nav__menu-icons-search--png"></div>
               </label>
-              <a href="/" class="nav-icons-cart">
-                <div class="cart-icon"></div>
+              <a href="/" class="nav__menu-icons-cart">
+                <div class="nav__menu-icons-cart--png"></div>
               </a>
-              <div class="nav-icons-darkmode"></div>
+              <div class="nav__menu-icons-darkmode--png"></div>
               
             </div>
             <input type="checkbox" id="search" class="d-none"/>
             <input
                 type="text"
-                class="nav-search-bar d-block"
+                class="nav__search-bar d-block"
                 placeholder="e.g T-shirts"
               />
           </nav>
-          <div class="logo-block">
+          <div class="header__logo-block">
             <a href="#">
-              <img src="./src/images/lightmode-icon/logo.png" alt="" class="logo-img">
+              <img src="./src/images/lightmode-icon/logo.png" alt="" class="header__logo-block--img">
             </a>
           </div>
         </header>
         <p class="title">結帳</p>
-        <div class="main-content">
-          <div class="step-container">
-            <div class="step">
-              <div class="step-circle"></div>
-              <div class="step-info">寄送地址</div>
+        <div class="content">
+          <div class="content__stepper">
+            <div class="content__stepper-step">
+              <div class="content__stepper-step--circle"></div>
+              <div class="content__stepper-step--info">寄送地址</div>
             </div>
-            <div class="step">
-              <div class="step-circle"></div>
-              <span class="step-line"></span>
-              <div class="step-info">運送方式</div>
+            <div class="content__stepper-step">
+              <div class="content__stepper-step--circle"></div>
+              <span class="content__stepper-step--line"></span>
+              <div class="content__stepper-step--info">運送方式</div>
             </div>
-            <div class="step">
-              <div class="step-circle"></div>
-              <span class="step-line"></span>
-              <div class="step-info">付款資訊</div>
+            <div class="content__stepper-step">
+              <div class="content__stepper-step--circle"></div>
+              <span class="content__stepper-step--line"></span>
+              <div class="content__stepper-step--info">付款資訊</div>
             </div>
           </div>
-          <form id="form-content">
-            <div class="form-part">
-              <p class="part-titel">寄送地址</p>
-              <div class="address-form">
+          <form id="content__form" class="content__form">
+            <div class="content__form-part">
+              <p class="content__form-part-title">寄送地址</p>
+              <div class="content__form-part-address">
                 <div class="form-row">
-                  <label for="mrms" class="mrms" aria-label="choose Mr. or Miss"
+                  <label for="mrms" class="content__form-part-address--mrms" aria-label="choose Mr. or Miss"
                     >稱謂</label
                   >
                   <div class="select-wrapper">
@@ -83,7 +83,7 @@
                   </div>
                 </div>
                 <div class="form-row">
-                  <label for="name" class="name" aria-label="enter your name"
+                  <label for="name" class="content__form-part-address--name" aria-label="enter your name"
                     >姓名</label
                   >
                   <input type="text" id="name" placeholder="請輸入姓名" />
@@ -91,7 +91,7 @@
                 <div class="form-row">
                   <label
                     for="tel"
-                    class="tel"
+                    class="content__form-part-address--tel"
                     aria-label="enter your mobile phone number"
                     >電話</label
                   >
@@ -100,7 +100,7 @@
                 <div class="form-row">
                   <label
                     for="email"
-                    class="email"
+                    class="content__form-part-address--email"
                     aria-label="enter your email address"
                     >Email</label
                   >
@@ -109,7 +109,7 @@
                 <div class="form-row">
                   <label
                     for="city"
-                    class="city"
+                    class="content__form-part-address--city"
                     aria-label="select your city location"
                     >縣市</label
                   >
@@ -140,7 +140,7 @@
                 <div class="form-row">
                   <label
                     for="address"
-                    class="address"
+                    class="content__form-part-address--address"
                     aria-label="enter your local address"
                     >地址</label
                   >
@@ -148,16 +148,16 @@
                 </div>
               </div>
             </div>
-            <div class="form-part">
-              <p class="part-titel">運送方式</p>
-              <div class="delivery-form">
+            <div class="content__form-part">
+              <p class="content__form-part-title">運送方式</p>
+              <div class="content__form-part-delivery">
                 <label
                   for="standard-way"
-                  class="delivery-method"
+                  class="content__form-part-delivery--method"
                   aria-label="choose standard delivery way"
                 >
                   <input type="radio" id="standard-way" name="delivery-way" />
-                  <div class="standard-info">
+                  <div class="content__form-part-delivery--method--standard">
                     <div>
                       <p>標準運送</p>
                       <p>免費</p>
@@ -167,11 +167,11 @@
                 </label>
                 <label
                   for="dhl-way"
-                  class="delivery-method"
+                  class="content__form-part-delivery--method"
                   aria-label="choose dhl delivery way"
                 >
                   <input type="radio" id="dhl-way" name="delivery-way" />
-                  <div class="dhl-info">
+                  <div class="ccontent__form-part-delivery--method--dhl">
                     <div>
                       <p>DHL 貨運</p>
                       <p>$500</p>
@@ -181,13 +181,13 @@
                 </label>
               </div>
             </div>
-            <div class="form-part">
-              <p class="part-titel">付款資訊</p>
-              <div class="payment-form">
+            <div class="content__form-part">
+              <p class="content__form-part-title">付款資訊</p>
+              <div class="content__form-part-payment">
                 <div class="form-row">
                   <label
                     for="holder"
-                    class="card-holder"
+                    class="content__form-part-payment--holder"
                     aria-label="enter the name on the credit card"
                     >持卡人姓名</label
                   >
@@ -196,7 +196,7 @@
                 <div class="form-row">
                   <label
                     for="num"
-                    class="card-num"
+                    class="content__form-part-payment--num"
                     aria-label="enter your card's number"
                     >卡號</label
                   >
@@ -209,7 +209,7 @@
                 <div class="form-row">
                   <label
                     for="date"
-                    class="valid-date"
+                    class="content__form-part-payment--validDate"
                     aria-label="choose the valid date"
                     >有效期限</label
                   >
@@ -218,7 +218,7 @@
                 <div class="form-row">
                   <label
                     for="key"
-                    class="card-key"
+                    class="content__form-part-payment--key"
                     aria-label="enter your CVC or CCV"
                     >CVC / CCV</label
                   >
@@ -227,85 +227,85 @@
               </div>
             </div>
           </form>
-          <div class="cart-content">
-            <div class="cart-item">
-              <div class="item-img">
+          <div class="content__cart">
+            <div class="content__cart-item">
+              <div class="content__cart-item--img">
                 <img src="./src/images/pants-1.png" alt="破壞補丁修身牛仔褲" />
               </div>
-              <div class="item-info">
+              <div class="content__cart-item--info">
                 <p class="name">破壞補丁修身牛仔褲</p>
-                <div class="item-buttons">
-                  <div class="circle-minus"></div>
-                  <p class="item-number">1</p>
-                  <div class="circle-plus"></div>
+                <div class="content__cart-item--buttons">
+                  <div class="content__cart-item--buttons-minus"></div>
+                  <p class="content__cart-item-number" data-id="1">1</p>
+                  <div class="content__cart-item--buttons-plus"></div>
                 </div>
-                <p class="item-price">$3,999</p>
+                <p class="content__cart-item--price">$3,999</p>
               </div>
             </div>
-            <div class="cart-item">
-              <div class="item-img">
+            <div class="content__cart-item">
+              <div class="content__cart-item--img">
                 <img src="./src/images/pants-2.png" alt="刷色直筒牛仔褲" />
               </div>
-              <div class="item-info">
+              <div class="content__cart-item--info">
                 <p class="name">刷色直筒牛仔褲</p>
-                <div class="item-buttons">
-                  <div class="circle-minus"></div>
-                  <p class="item-number">1</p>
-                  <div class="circle-plus"></div>
+                <div class="content__cart-item--buttons">
+                  <div class="content__cart-item--buttons-minus"></div>
+                  <p class="content__cart-item-number" data-id"2">1</p>
+                  <div class="content__cart-item--buttons-plus"></div>
                 </div>
-                <p class="item-price">$1,299</p>
+                <p class="content__cart-item--price">$1,299</p>
               </div>
             </div>
-            <p class="cart-info">
+            <p class="content__cart-info">
               <span>運費</span>
               <span>免費</span>
             </p>
-            <p class="cart-total">
+            <p class="content__cart-total">
               <span>小計</span>
               <span>$5,298</span>
             </p>
           </div>
-          <div class="btn-control">
-            <button class="prev">
+          <div class="btn">
+            <button class="btn__prev">
               <span>上一步</span>
             </button>
-            <button class="next">
+            <button class="btn__next">
               <span>下一步</span>
             </button>
           </div>
         </div>
-      </div>
-      <footer class="d-none">
+      </main>
+      <footer class="footer d-none">
         <div class="footer-container">
-          <div class="footer-logo">
-            <div class="logo-block"></div>
+          <div class="footer__logo">
+            <div class="footer__logo--block"></div>
           </div>
-          <div class="footer-section">
-            <p class="title">客戶服務</p>
+          <div class="footer__section">
+            <p class="footer__section-title">客戶服務</p>
             <p>運送說明</p>
             <p>退換貨相關</p>
             <p>付款資訊</p>
             <p>FAQ</p>
           </div>
-          <div class="footer-section">
-            <p class="title">關於我們</p>
+          <div class="footer__section">
+            <p class="footer__section-title">關於我們</p>
             <p>品牌故事</p>
             <p>媒體聯繫</p>
             <p>Press kit</p>
           </div>
-          <div class="footer-section">
-            <p class="title">資訊</p>
+          <div class="footer__section">
+            <p class="footer__section-title">資訊</p>
             <p>隱私權政策</p>
             <p>Cookie</p>
             <p>GDPR</p>
           </div>
-          <div class="footer-section">
-            <p class="title">追蹤 ALPHA Shop</p>
+          <div class="footer__section">
+            <p class="footer__section-title">追蹤 ALPHA Shop</p>
             <p>+886 02123-45678</p>
-            <div class="footer-icons">
-              <div class="icon-facebook"></div>
-              <div class="icon-instagram"></div>
-              <div class="icon-whatsapp"></div>
+            <div class="footer__section-icons">
+              <div class="footer__section-icons--facebook"></div>
+              <div class="footer__section-icons--instagram"></div>
+              <div class="footer__section-icons--whatsapp"></div>
             </div>
           </div>
         </div>
