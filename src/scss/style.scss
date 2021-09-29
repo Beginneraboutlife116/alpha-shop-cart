@@ -18,6 +18,26 @@
   background-image: var($png);
 }
 
+%input-style {
+  width: 100%;
+  height: 40px;
+  padding: $space-xs $space-basic;
+  background-color: transparent;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: $font-size-xs;
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+}
+
+$input-classes: mrms, name, tel, email, city, address, holder, num, date, key;
+@each $val in $input-classes {
+  .#{$val} {
+    grid-area: $val;
+  }
+};
 // start styling
 body {
   color: var(--basic-color);
@@ -164,7 +184,7 @@ body {
           }
         }
       }
-      .checked {
+      .finished {
         color: $gray-7;
         .content__stepper-step--circle {
           background-color: $gray-7;
@@ -211,11 +231,112 @@ body {
       }
     }
     &__form {
+      margin-bottom: $space-xl;
       &-part {
-        
+        &-title {
+          margin-bottom: $space-lg;
+          font-size: $font-size-lg;
+        }
+        .form-row {
+          & label {
+            display: block;
+            margin-bottom: ($space-basic / 2);
+            font-size: $font-size-xs;
+            color: var(--input-description);
+          }
+          & .select-wrapper {
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: $space-basic;
+              transform: translate(-50%, -50%);
+              border-width: 5px 4.5px 0 4.5px;
+              border-color: var(--basic-color) transparent transparent
+                transparent;
+              border-style: solid;
+              z-index: -1;
+            }
+            & select {
+              @extend %input-style;
+              -webkit-appearance: none;
+              appearance: none;
+              &:invalid {
+                color: var(--input-placeholder);
+              }
+            }
+          }
+          & input[type="text"],
+          input[type="email"],
+          input[type="date"] {
+            @extend %input-style;
+          }
+        }
+        &-address {
+          grid-template: auto / 40% 10% 50%;
+          grid-template-areas: 
+            "mrms . name"
+            "tel tel tel"
+            "email email email"
+            "city city city"
+            "address address address";
+          row-gap: $space-basic;
+        }
+        &-delivery {
+          &--method {
+            width: 100%;
+            height: 60px;
+            border: 1px solid var(--unchecked-border);
+            border-radius: 4px;
+            & input[type="radio"] {
+              appearance: none;
+              -webkit-appearance: none;
+              width: 20px;
+              height: 20px;
+              margin: 20px;
+              border: 1px solid #333;
+              border-radius: 50%;
+              background-color: var(--box-unchecked-bg);
+              &:checked {
+                border-width: 6px;
+              }
+            }
+            &--standard,
+            &--dhl {
+              width: 80%;
+              font-size: $font-size-xs;
+              color: var(--basic-color);
+              .radio-info {
+                font-size: $font-size-sm;
+              }
+            }
+          }
+          .checked {
+            border-color: var(--checked-border);
+          }
+          & label:first-child {
+            margin-bottom: $space-lg;
+          }
+        }
+        &-payment {
+          grid-template: auto / 45% 10% 45%;
+          grid-template-areas: 
+            "holder holder holder"
+            "num num num"
+            "date . key";
+          row-gap: $space-basic;
+          & input[type="date"] {
+            color: var(--input-description);
+          }
+        }
       }
     }
-    &__cart {}
-    .btn {}
+    &__cart {
+    }
+    .btn {
+    }
   }
 }
