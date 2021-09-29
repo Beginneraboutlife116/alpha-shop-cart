@@ -4,6 +4,7 @@
 // base & layout
 @import "reset";
 @import "layout";
+@import "breakpoints";
 
 // classes
 @import "utilities";
@@ -24,96 +25,188 @@ body {
 
 .main-container {
   margin: 0 15px 40px;
-}
-
-.header {
-  position: relative;
-  padding: 20px 0;
-  height: 55px;
-  .nav__toggle-box {
-    display: block;
-    width: 20px;
-    height: 15px;
-    &--icon {
-      display: inherit;
-      position: relative;
-      width: 100%;
-      height: 2px;
-      background-color: var(--basic-color);
-      &::before,
-      &::after {
-        content: "";
+  .header {
+    position: relative;
+    padding: 20px 0;
+    height: 55px;
+    .nav__toggle-box {
+      display: block;
+      width: 20px;
+      height: 15px;
+      &--icon {
         display: inherit;
-        position: absolute;
+        position: relative;
+        width: 100%;
         height: 2px;
         background-color: var(--basic-color);
-        left: 0;
-        transform: translateY(-50%);
+        &::before,
+        &::after {
+          content: "";
+          display: inherit;
+          position: absolute;
+          height: 2px;
+          background-color: var(--basic-color);
+          left: 0;
+          transform: translateY(-50%);
+        }
+        &::before {
+          width: 75%;
+          top: 7.5px;
+        }
+        &::after {
+          width: 50%;
+          top: 15px;
+        }
       }
-      &::before {
-        width: 75%;
-        top: 7.5px;
+    }
+
+    #nav__toggle-checkbox:checked + nav {
+      transform: scaleY(1);
+    }
+
+    .nav {
+      position: absolute;
+      top: calc(100% - 10px);
+      width: 100%;
+      height: 100vh;
+      background-color: var(--body-bg);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.25s;
+      z-index: 1;
+      &__menu-list {
+        height: 90px;
+        @extend %makeInnerCenter;
+        border-bottom: 2px solid rgba(42, 42, 42, 0.1);
       }
-      &::after {
-        width: 50%;
-        top: 15px;
+      &__menu-icons {
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 24px;
+        &-search--png {
+          @include iconSetting(--search-icon);
+        }
+        &-cart--png {
+          @include iconSetting(--cart-icon);
+        }
+        &-darkmode--png {
+          @include iconSetting(--darkmode-icon);
+        }
       }
+      // 施作search-bar的input
+      &__search-bar {
+        margin: 24px auto;
+        padding: 12px 24px;
+        border-radius: 99em;
+        // box-shadow: inset 0 0 5px rgba(42, 42, 42, 0.5);
+        background-color: $gray-1;
+        transform-origin: left;
+        transform: scaleX(0);
+        border: 1px solid var(--input-border);
+        &::placeholder {
+          color: black;
+        }
+      }
+      #search:checked + .nav__search-bar {
+        transform: scaleX(1);
+      }
+    }
+
+    &__logo-block {
+      width: 140px;
+      height: 25px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
-
-  #nav__toggle-checkbox:checked + nav {
-    transform: scaleY(1);
-  }
-
-  .nav {
-    position: absolute;
-    top: calc(100% - 10px);
-    width: 100%;
-    height: 100vh;
-    background-color: var(--body-bg);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.25s;
-    &__menu-list {
-      height: 90px;
-      @extend %makeInnerCenter;
-      border-bottom: 2px solid rgba(42, 42, 42, 0.1);
-    }
-    &__menu-icons {
-      width: 150px;
-      margin: 0 auto;
-      padding-top: 24px;
-      &-search--png {
-        @include iconSetting(--search-icon);
-      }
-      &-cart--png {
-        @include iconSetting(--cart-icon);
-      }
-      &-darkmode--png {
-        @include iconSetting(--darkmode-icon);
-      }
-    }
-    // 施作search-bar的input
-    &__search-bar {
-      margin: 24px auto;
-      padding: 12px 24px;
-      border-radius: 99em;
-      box-shadow: inset 0 0 5px rgba(42, 42, 42, 0.5);
-      transform-origin: left;
-      transform: scaleX(0);
-      border: 1px solid var(--input-border);
-    }
-    #search:checked + .nav__search-bar {
-      transform: scaleX(1);
+  .title {
+    margin-top: $space-basic;
+    font-size: $font-size-lg;
+    font-weight: bold;
+    line-height: 38px;
+    color: var(--basic-color);
+    @include breakpoint {
+      margin-top: $space-lg;
+      font-size: $font-size-xl;
     }
   }
-
-  &__logo-block {
-    width: 140px;
-    height: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .content__stepper {
+    padding: 24px 0;
+    &-step {
+      position: relative;
+      &--circle {
+        @extend %makeInnerCenter;
+        width: $space-xl;
+        height: $space-xl;
+        border-radius: 50%;
+        border: 1px solid var(--step-circle-unfinished-color);
+        @include breakpoint {
+          width: $space-lg;
+          height: $space-lg;
+        }
+        & span {
+          font-size: $font-size-md;
+          color: var(--step-circle-unfinished-color);
+          @include breakpoint {
+            font-size: $font-size-xs;
+          }
+        }
+      }
+      &--info {
+        display: none;
+        @include breakpoint {
+          display: block;
+          margin-left: ($space-basic / 2);
+          color: var(--step-circle-unfinished-color);
+        }
+      }
+    }
+    .checked {
+      color: $gray-7;
+      .content__stepper-step--circle {
+        background-color: $gray-7;
+        & span {
+          display: none;
+        }
+        &::after {
+          content: '';
+          width: 20px;
+          height: 20px;
+          background-image: url('../images/icon-check.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 0;
+          @include breakpoint {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      & + span {
+        background-color: var(--basic-color);
+      }
+      .content__stepper-step--info {
+        color: var(--basic-color);
+      }
+    }
+    .active {
+      .content__stepper-step--circle {
+        border-color: var(--basic-color);
+      }
+      & span {
+        color: var(--basic-color);
+      }
+    }
+    &--line {
+      display: block;
+      width: 60px;
+      height: 2px;
+      background-color: var(--step-circle-unfinished-color);
+    }
+    @include breakpoint {
+      padding: 48px 0 64px;
+    }
   }
 }

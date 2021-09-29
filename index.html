@@ -51,19 +51,25 @@
         </header>
         <p class="title">結帳</p>
         <div class="content">
-          <div class="content__stepper">
-            <div class="content__stepper-step">
-              <div class="content__stepper-step--circle"></div>
+          <div class="content__stepper d-flex jc-between ai-center">
+            <div class="content__stepper-step d-flex checked">
+              <div class="content__stepper-step--circle">
+                <span>1</span>
+              </div>
               <div class="content__stepper-step--info">寄送地址</div>
             </div>
-            <div class="content__stepper-step">
-              <div class="content__stepper-step--circle"></div>
-              <span class="content__stepper-step--line"></span>
+            <span class="content__stepper--line"></span>
+            <div class="content__stepper-step d-flex active">
+              <div class="content__stepper-step--circle">
+                <span>2</span>
+              </div>
               <div class="content__stepper-step--info">運送方式</div>
             </div>
-            <div class="content__stepper-step">
-              <div class="content__stepper-step--circle"></div>
-              <span class="content__stepper-step--line"></span>
+            <span class="content__stepper--line"></span>
+            <div class="content__stepper-step d-flex">
+              <div class="content__stepper-step--circle">
+                <span>3</span>
+              </div>
               <div class="content__stepper-step--info">付款資訊</div>
             </div>
           </div>
