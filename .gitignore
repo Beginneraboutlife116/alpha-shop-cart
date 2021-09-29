@@ -9,6 +9,7 @@ ehthumbs.db
 Desktop.ini
 
 # npm
+dist
 node_modules
 *.log
 *.gz
