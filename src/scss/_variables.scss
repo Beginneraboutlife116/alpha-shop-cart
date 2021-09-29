@@ -27,11 +27,13 @@ $gray-7: #333;
   --unchecked-border: #{$gray-1};
   --checked-border: #{$basic-dark};
   --cart-border: #{$gray-1};
-  --cart-button-color: #{$gray-1};
   --cart-button-content: #{$black};
+  --cart-info-border: #{$gray-1};
   --search-icon: url(../images/lightmode-icon/icon-search.png);
   --cart-icon: url(../images/lightmode-icon/icon-cart.png);
   --darkmode-icon: url(../images/lightmode-icon/icon-moon.png);
+  --plus-icon: url(../images/lightmode-icon/icon-plus.png);
+  --minus-icon: url(../images/lightmode-icon/icon-minus.png);
 }
 
 .darkmode {
@@ -48,11 +50,13 @@ $gray-7: #333;
   --unchecked-border: #{$gray-6};
   --checked-border: #{$white};
   --cart-border: rgba(255, 255, 255, 0.2);
-  --cart-button-color: #{$gray-4};
   --cart-button-content: #{$gray-7};
+  --cart-info-border: #{$white};
   --search-icon: url(../images/darkmode-icon/icon-search-dark.png);
   --cart-icon: url(../images/darkmode-icon/icon-cart-dark.png);
   --darkmode-icon: url(../images/darkmode-icon/icon-sun.png);
+  --plus-icon: url(../images/darkmode-icon/icon-plus-dark.png);
+  --minus-icon: url(../images/darkmode-icon/icon-minus-dark.png);
 }
 
 $font-size-xs: 12px;
