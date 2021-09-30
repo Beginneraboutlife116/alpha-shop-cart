@@ -204,13 +204,30 @@ body {
     line-height: 38px;
     color: var(--basic-color);
     @include breakpoint(375px) {
-      margin-top: $space-lg;
+      margin-top: 80px;
       font-size: $font-size-xl;
     }
   }
   .content {
+    @include breakpoint(375px) {
+      display: grid;
+      grid-template: 48px 24px 64px 288px 48px 2px 24px 46px / 50% 10% 40%;
+      grid-template-areas:
+        ". . ."
+        "stepper . cart"
+        ". . cart"
+        "form . cart"
+        ". . cart"
+        "divider . cart"
+        ". . cart"
+        "btn . cart";
+    }
     &__stepper {
       padding: 24px 0;
+      grid-area: stepper;
+      @include breakpoint(375px) {
+        padding: 0;
+      }
       &-step {
         position: relative;
         &--circle {
@@ -270,6 +287,9 @@ body {
         & span {
           color: var(--basic-color);
         }
+        .content__stepper-step--info {
+          color: var(--basic-color);
+        }
       }
       &--line {
         display: block;
@@ -277,11 +297,9 @@ body {
         height: 2px;
         background-color: var(--step-circle-unfinished-color);
       }
-      @include breakpoint(375px) {
-        padding: 48px 0 64px;
-      }
     }
     &__form {
+      grid-area: form;
       margin-bottom: $space-xl;
       &-part {
         &-title {
@@ -335,6 +353,13 @@ body {
             "city city city"
             "address address address";
           row-gap: $space-basic;
+          @include breakpoint(375px) {
+            grid-template: auto / 5fr 1fr 2fr 1fr 8fr;
+            grid-template-areas:
+              "mrms . name name name"
+              "tel tel tel . email"
+              "city . address address address";
+          }
         }
         &-delivery {
           &--method {
@@ -382,24 +407,66 @@ body {
           & input[type="date"] {
             color: var(--input-description);
           }
+          @include breakpoint(375px) {
+            grid-template: auto / 8fr 1fr 2fr 6fr;
+            grid-template-areas:
+              "holder holder holder ."
+              "num num num ."
+              "date . key key";
+          }
         }
       }
     }
     &__cart {
+      grid-area: cart;
       width: 100%;
-      height: 358px;
+      min-height: 358px;
       padding: $space-basic;
       border: 1px solid var(--cart-border);
       border-radius: ($space-basic / 2);
+      @include breakpoint(375px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0 $space-lg;
+      }
+      &-title {
+        display: none;
+        @include breakpoint(375px) {
+          display: block;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
       &-item {
         margin-bottom: 10px;
+        @include breakpoint(375px) {
+          margin-bottom: 0;
+        }
         &--img {
           width: 100px;
           height: 100px;
         }
         &--info {
           flex-direction: column;
+          align-items: end;
           color: var(--basic-color);
+          @include breakpoint(375px) {
+            width: 65%;
+            flex-direction: row;
+            align-items: start;
+          }
+          &--container {
+            width: 100%;
+            flex-direction: column;
+            align-items: end;
+            @include breakpoint(375px) {
+              align-items: start;
+            }
+          }
+          &--name {
+            margin-bottom: 18px;
+          }
           &--buttons-minus,
           &--buttons-plus {
             width: 26px;
@@ -429,22 +496,34 @@ body {
         }
       }
     }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: var(--cart-button-divider);
+      margin-top: $space-xl;
+      grid-area: divider;
+      @include breakpoint(375px) {
+        margin: 0;
+      }
+    }
     .btn {
       position: relative;
-      margin-top: ($space-xl + $space-lg + 1px);
+      margin-top: $space-lg;
       padding-bottom: 40px;
       z-index: 0;
-      &::before {
-        @include afterAndBeforeStyle(100%, 1px);
-        // margin: $space-xl 0 $space-lg;
-        position: absolute;
-        top: -($space-lg);
-        background-color: var(--cart-button-divider);
+      grid-area: btn;
+      @include breakpoint(375px) {
+        display: grid;
+        grid-template-columns: 30% 1fr 30%;
       }
       &__prev {
         @extend %makeInnerCenter;
         height: 46px;
         width: 40%;
+        @include breakpoint(375px) {
+          grid-column: 1 / 2;
+          width: 100%;
+        }
         & span {
           margin-left: $space-xs;
         }
@@ -466,6 +545,10 @@ body {
         border-radius: 8px;
         background-color: $main-button-color;
         color: $white;
+        @include breakpoint(375px) {
+          grid-column: 3 / 4;
+          width: 100%;
+        }
         & span {
           margin-right: $space-xs;
         }

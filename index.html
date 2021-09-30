@@ -234,16 +234,19 @@
             </div>
           </form>
           <div class="content__cart">
+            <p class="content__cart-title">購物籃</p>
             <div class="content__cart-item d-flex jc-between">
               <div class="content__cart-item--img">
                 <img src="./src/images/pants-1.png" alt="破壞補丁修身牛仔褲" />
               </div>
-              <div class="content__cart-item--info d-flex f-column jc-between ai-end">
-                <p class="content__cart-item--info--name">破壞補丁修身牛仔褲</p>
-                <div class="content__cart-item--info--buttons d-flex jc-between">
-                  <div class="content__cart-item--info--buttons-minus"></div>
-                  <p class="content__cart-item--info--number" data-id="1">1</p>
-                  <div class="content__cart-item--info--buttons-plus"></div>
+              <div class="content__cart-item--info d-flex ai-end jc-between">
+                <div class="content__cart-item--info--container d-flex jc-between">
+                  <p class="content__cart-item--info--name">破壞補丁修身牛仔褲</p>
+                  <div class="content__cart-item--info--buttons d-flex jc-around">
+                    <div class="content__cart-item--info--buttons-minus"></div>
+                    <p class="content__cart-item--info--number" data-id="1">1</p>
+                    <div class="content__cart-item--info--buttons-plus"></div>
+                  </div>
                 </div>
                 <p class="content__cart-item--info--price">$3,999</p>
               </div>
@@ -253,11 +256,13 @@
                 <img src="./src/images/pants-2.png" alt="刷色直筒牛仔褲" />
               </div>
               <div class="content__cart-item--info d-flex f-column jc-between ai-end">
-                <p class="content__cart-item--info--name">刷色直筒牛仔褲</p>
-                <div class="content__cart-item--info--buttons d-flex jc-between">
-                  <div class="content__cart-item--info--buttons-minus"></div>
-                  <p class="content__cart-item--info--number" data-id"2">1</p>
-                  <div class="content__cart-item--info--buttons-plus"></div>
+                <div class="content__cart-item--info--container d-flex jc-between">
+                  <p class="content__cart-item--info--name">刷色直筒牛仔褲</p>
+                  <div class="content__cart-item--info--buttons d-flex jc-between">
+                    <div class="content__cart-item--info--buttons-minus"></div>
+                    <p class="content__cart-item--info--number" data-id"2">1</p>
+                    <div class="content__cart-item--info--buttons-plus"></div>
+                  </div>
                 </div>
                 <p class="content__cart-item--info--price">$1,299</p>
               </div>
@@ -271,6 +276,7 @@
               <span>$5,298</span>
             </p>
           </div>
+          <div class="divider"></div>
           <div class="btn d-flex jc-between ai-center">
             <button class="btn__prev disabled">
               <span>上一步</span>
