@@ -52,14 +52,24 @@ body {
 
 .main-container {
   margin: 0 15px 40px;
+  @include breakpoint(375px) {
+    margin: 0 15% 70px;
+  }
   .header {
     position: relative;
     padding: 20px 0;
     height: 55px;
+    @include breakpoint(375px) {
+      padding: 15px 0;
+      height: 60px;
+    }
     .nav__toggle-box {
       display: block;
       width: 20px;
       height: 15px;
+      @include breakpoint(375px) {
+        display: none;
+      }
       &--icon {
         display: inherit;
         position: relative;
@@ -98,37 +108,75 @@ body {
       transform-origin: top;
       transition: transform 0.25s;
       z-index: 1;
-      &__menu-list {
-        height: 90px;
-        @extend %makeInnerCenter;
-        border-bottom: 2px solid rgba(42, 42, 42, 0.1);
+      @include breakpoint(375px) {
+        all: unset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
       }
-      &__menu-icons {
-        width: 150px;
-        margin: 0 auto;
-        padding-top: 24px;
-        &-search--png {
-          @include iconSetting(--search-icon);
+      &__menu {
+        @include breakpoint(375px) {
+          display: flex;
+          justify-content: space-between;
+          width: 35%;
         }
-        &-cart--png {
-          @include iconSetting(--cart-icon);
+        &-list {
+          height: 90px;
+          @extend %makeInnerCenter;
+          border-bottom: 2px solid rgba(42, 42, 42, 0.1);
+          @include breakpoint(375px) {
+            all: unset;
+          }
+          & a {
+            color: var(--basic-color);
+          }
         }
-        &-darkmode--png {
-          @include iconSetting(--darkmode-icon);
+        &-icons {
+          width: 40%;
+          margin: 0 auto;
+          padding-top: 24px;
+          @include breakpoint(375px) {
+            order: 1;
+            margin: 0;
+            padding: 0;
+            width: 12%;
+          }
+          &-search--png {
+            @include iconSetting(--search-icon);
+            cursor: pointer;
+            @include breakpoint(375px) {
+              opacity: 1;
+              transition: opacity 0.1s;
+            }
+          }
+          &-cart--png {
+            @include iconSetting(--cart-icon);
+          }
+          &-darkmode--png {
+            @include iconSetting(--darkmode-icon);
+            cursor: pointer;
+          }
         }
       }
       // 施作search-bar的input
       &__search-bar {
-        margin: 24px auto;
-        padding: 12px 24px;
+        margin: $space-lg auto;
+        padding: $space-xs $space-lg;
         border-radius: 99em;
-        // box-shadow: inset 0 0 5px rgba(42, 42, 42, 0.5);
-        background-color: $gray-1;
+        box-shadow: inset 0 0 10px var(--input-description);
         transform-origin: left;
         transform: scaleX(0);
+        transition: transform 0.1s;
         border: 1px solid var(--input-border);
         &::placeholder {
           color: black;
+        }
+        @include breakpoint(375px) {
+          position: absolute;
+          right: calc(12% + 16px);
+          margin: 0;
+          transform-origin: right;
         }
       }
       #search:checked + .nav__search-bar {
@@ -143,6 +191,10 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      @include breakpoint(375px) {
+        width: 170px;
+        height: 30px;
+      }
     }
   }
   .title {
@@ -151,7 +203,7 @@ body {
     font-weight: bold;
     line-height: 38px;
     color: var(--basic-color);
-    @include breakpoint {
+    @include breakpoint(375px) {
       margin-top: $space-lg;
       font-size: $font-size-xl;
     }
@@ -167,21 +219,21 @@ body {
           height: $space-xl;
           border-radius: 50%;
           border: 1px solid var(--step-circle-unfinished-color);
-          @include breakpoint {
+          @include breakpoint(375px) {
             width: $space-lg;
             height: $space-lg;
           }
           & span {
             font-size: $font-size-md;
             color: var(--step-circle-unfinished-color);
-            @include breakpoint {
+            @include breakpoint(375px) {
               font-size: $font-size-xs;
             }
           }
         }
         &--info {
           display: none;
-          @include breakpoint {
+          @include breakpoint(375px) {
             display: block;
             margin-left: ($space-basic / 2);
             color: var(--step-circle-unfinished-color);
@@ -198,7 +250,7 @@ body {
           &::after {
             @include afterAndBeforeStyle(20px, 20px);
             background: url("../images/icon-check.png") center/contain no-repeat;
-            @include breakpoint {
+            @include breakpoint(375px) {
               width: 16px;
               height: 16px;
             }
@@ -225,7 +277,7 @@ body {
         height: 2px;
         background-color: var(--step-circle-unfinished-color);
       }
-      @include breakpoint {
+      @include breakpoint(375px) {
         padding: 48px 0 64px;
       }
     }
@@ -430,7 +482,7 @@ body {
 
 footer {
   display: none;
-  @include breakpoint {
+  @include breakpoint(375px) {
     display: block;
   }
 }
