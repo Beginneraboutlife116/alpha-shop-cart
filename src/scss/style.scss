@@ -381,6 +381,7 @@ body {
       position: relative;
       margin-top: ($space-xl + $space-lg + 1px);
       padding-bottom: 40px;
+      z-index: 0;
       &::before {
         @include afterAndBeforeStyle(100%, 1px);
         // margin: $space-xl 0 $space-lg;
@@ -391,6 +392,7 @@ body {
       &__prev {
         @extend %makeInnerCenter;
         height: 46px;
+        width: 40%;
         & span {
           margin-left: $space-xs;
         }
@@ -415,8 +417,9 @@ body {
         & span {
           margin-right: $space-xs;
         }
-        &::after {
-          @include afterAndBeforeStyle(24px, 24px);
+        & div {
+          width: 24px;
+          height: 24px;
           background: var(--arrow-white) center/contain no-repeat;
           transform: rotate(180deg);
         }
