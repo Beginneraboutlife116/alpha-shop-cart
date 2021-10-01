@@ -474,6 +474,7 @@ body {
           &--buttons-plus {
             width: 26px;
             height: 26px;
+            cursor: pointer;
           }
           &--buttons-minus {
             background: var(--minus-icon) center/contain no-repeat;
