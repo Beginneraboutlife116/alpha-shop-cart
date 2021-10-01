@@ -127,7 +127,7 @@ body {
           height: 90px;
           @extend %makeInnerCenter;
           border-bottom: 2px solid rgba(42, 42, 42, 0.1);
-          @include breakpoint(376x) {
+          @include breakpoint(376px) {
             all: unset;
           }
           & a {
@@ -135,7 +135,7 @@ body {
           }
         }
         &-icons {
-          width: 40%;
+          min-width: 72px;
           margin: 0 auto;
           padding-top: 24px;
           @include breakpoint(376px) {

@@ -1,11 +1,14 @@
-const inputRadio = document.querySelectorAll('input[type="radio"]')
+const inputRadios = document.querySelectorAll('input[type="radio"]')
 const deliveryWayPanel = document.querySelector('.content__form-part-delivery')
 
 function deliveryWayChecked (e) {
-  // console.log(e.target)
-  const target = e.target.firstElementChild
-  console.log(target)
-  // console.log(target.firstElementChild)
+  for (let i = 0; i < inputRadios.length; i++) {
+    if (inputRadios[i].checked) {
+      inputRadios[i].parentElement.classList.add('checked')
+    } else {
+      inputRadios[i].parentElement.classList.remove('checked')
+    }
+  }
 }
 
-deliveryWayPanel.addEventListener('click', deliveryWayChecked)
+deliveryWayPanel.addEventListener('change', deliveryWayChecked)
