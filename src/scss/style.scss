@@ -35,7 +35,10 @@
   cursor: pointer;
   font-size: $font-size-xs;
   &::placeholder {
-    color: var(--input-placeholder);
+    color: $gray-5;
+  }
+  &:valid {
+    color: var(--basic-color);
   }
 }
 
@@ -47,6 +50,7 @@ $grid-classes: mrms, name, tel, email, city, address, holder, num, date, key;
 }
 // start styling
 body {
+  background-color: var(--body-bg);
   color: var(--basic-color);
 }
 
@@ -136,6 +140,7 @@ body {
         }
         &-icons {
           min-width: 72px;
+          width: 40%;
           margin: 0 auto;
           padding-top: 24px;
           @include breakpoint(376px) {
@@ -192,6 +197,7 @@ body {
       position: absolute;
       top: 50%;
       left: 50%;
+      background: var(--logo) center/contain no-repeat;
       transform: translate(-50%, -50%);
       @include breakpoint(376px) {
         width: 170px;
@@ -260,9 +266,9 @@ body {
         }
       }
       .finished {
-        color: $gray-7;
         .content__stepper-step--circle {
           background-color: $gray-7;
+          border-color: var(--stepActiveFinished-circleBorderColor);
           & span {
             display: none;
           }
@@ -275,19 +281,23 @@ body {
             }
           }
         }
-        & + span {
-          background-color: var(--basic-color);
-        }
         .content__stepper-step--info {
           color: var(--basic-color);
+        }
+        & + span {
+          background-color: var(--basic-color);
         }
       }
       .active {
         .content__stepper-step--circle {
-          border-color: var(--basic-color);
+          border-color: var(--stepActiveFinished-circleBorderColor);
+          background-color: var(--step-circle-bgc);
         }
         & span {
           color: var(--basic-color);
+        }
+        & + span {
+          background-color: var(--basic-color);
         }
         .content__stepper-step--info {
           color: var(--basic-color);
@@ -336,7 +346,7 @@ body {
               -webkit-appearance: none;
               appearance: none;
               &:invalid {
-                color: var(--input-placeholder);
+                color: $gray-5;
               }
             }
           }
@@ -367,9 +377,10 @@ body {
           &--method {
             width: 100%;
             height: 60px;
-            border: 1px solid var(--unchecked-border);
+            border: 1px solid var(--box-unchecked-border);
             border-radius: 4px;
             background-color: transparent;
+            cursor: pointer;
             & input[type="radio"] {
               appearance: none;
               -webkit-appearance: none;
@@ -380,6 +391,7 @@ body {
               border-radius: 50%;
               background-color: var(--box-unchecked-bg);
               &:checked {
+                background-color: white;
                 border-width: 6px;
               }
             }
@@ -394,7 +406,7 @@ body {
             }
           }
           .checked {
-            border-color: var(--checked-border);
+            border-color: var(--box-checked-border);
           }
           & label:first-child {
             margin-bottom: $space-lg;
@@ -427,6 +439,7 @@ body {
       padding: $space-basic;
       border: 1px solid var(--cart-border);
       border-radius: ($space-basic / 2);
+      background-color: var(--cart-bg);
       @include breakpoint(376px) {
         display: flex;
         flex-direction: column;
@@ -442,7 +455,7 @@ body {
         }
       }
       &-item {
-        margin-bottom: 10px;
+        margin-bottom: $space-xs;
         @include breakpoint(376px) {
           margin-bottom: 0;
         }
@@ -491,7 +504,7 @@ body {
       }
       &-info,
       &-total {
-        border-top: 1px solid var(--cart-info-border);
+        border-top: 1px solid var(--cart-info-divider);
         padding: $space-basic 0;
         font-size: 14;
         color: var(--basic-color);
@@ -529,6 +542,7 @@ body {
         }
         & span {
           margin-left: $space-xs;
+          color: var(--basic-color);
         }
         &::before {
           @include afterAndBeforeStyle(24px, 24px);
