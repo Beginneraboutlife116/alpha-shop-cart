@@ -56,18 +56,26 @@ body {
 
 .main-container {
   margin: 0 15px;
-  padding-bottom: 40px;
+  padding: 55px 0 40px;
   @include breakpoint(376px) {
     margin: 0 15%;
-    padding-bottom: 120px;
+    padding-bottom: 60px 0 120px;
   }
   .header {
-    position: relative;
+    position: fixed;
     padding: 20px 0;
     height: 55px;
+    top: 0;
+    left: 15px;
+    right: 15px;
+    z-index: 9999;
+    background-color: var(--body-bg);
+    opacity: .9;
     @include breakpoint(376px) {
       padding: 15px 0;
       height: 60px;
+      left: 15%;
+      right: 15%;
     }
     .nav__toggle-box {
       display: block;
