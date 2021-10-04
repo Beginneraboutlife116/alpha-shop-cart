@@ -317,7 +317,7 @@ body {
     }
     &--active {
       .stepper__step--circle {
-        border-color: var(--stepActiveFinished-circleBorderColor);
+        border-color: var(--step-activeAndFinished-circleBorderColor);
         background-color: var(--step-circle-bgc);
       }
       .stepper__step--circle-number {
@@ -333,7 +333,7 @@ body {
     &--finished {
       .stepper__step--circle {
         background-color: $gray-7;
-        border-color: var(--stepActiveFinished-circleBorderColor);
+        border-color: var(--step-activeAndFinished-circleBorderColor);
         &-number {
           display: none;
         }

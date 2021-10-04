@@ -1,7 +1,6 @@
 // colors
 $main-button-color: #f67599;
 $basic-dark: #2a2a2a;
-$black: black;
 $white: white;
 $gray-1: #f0f0f5;
 $gray-2: #afb1bd;
@@ -17,9 +16,8 @@ $gray-9: #F6F7F8;
 :root {
   --body-bg: white;
   --basic-color: #{$basic-dark};
-  --intensive-color: #{$black};
 
-  --stepActiveFinished-circleBorderColor: #{$basic-dark};
+  --step-activeAndFinished-circleBorderColor: #{$basic-dark};
   --step-circle-bgc: transparent;
   --step-circle-unfinished-color: #{$gray-2};
 
@@ -34,7 +32,6 @@ $gray-9: #F6F7F8;
 
   --cart-border: #{$gray-1};
   --cart-bg: white;
-  --cart-button-content: #{$black};
   --cart-info-divider: #{$gray-1};
   --cart-button-divider: #{$gray-8};
 
@@ -58,7 +55,7 @@ $gray-9: #F6F7F8;
   --basic-color: #{$white};
   --intensive-color: #{$white};
 
-  --stepActiveFinished-circleBorderColor: transparent;
+  --step-activeAndFinished-circleBorderColor: transparent;
   --step-circle-bgc: #{$gray-7};
   --step-circle-unfinished-color: rgba(240, 240, 245, 0.4);
 
