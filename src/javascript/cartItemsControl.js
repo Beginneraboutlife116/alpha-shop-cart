@@ -15,8 +15,8 @@ const cartItems = [
   }
 ]
 
-const cartItemButtons = document.querySelectorAll('.content__cart-item--info--buttons')
-const totalPrice = document.querySelector('.content__cart-total').lastElementChild
+const cartItemButtons = document.querySelectorAll('.cart__item-info--buttons')
+const totalPrice = document.querySelector('.cart__total').lastElementChild
 
 function countPrice () {
   let price = 0
@@ -27,13 +27,13 @@ function countPrice () {
 }
 
 function cartItemButtonControl (e) {
-  const id = e.target.closest('.content__cart-item--info--container').dataset.id
+  const id = e.target.closest('.cart__item-info-container').dataset.id
   const target = e.target
-  const numbers = document.querySelectorAll('.content__cart-item--info--number')
-  if (target.classList.contains('plus')) {
+  const numbers = document.querySelectorAll('.cart__item-info--number')
+  if (target.classList.contains('cart__item-info--buttons-plus')) {
     cartItems[id - 1].number += 1
     numbers[id - 1].innerHTML = cartItems[id - 1].number
-  } else if (target.classList.contains('minus')) {
+  } else if (target.classList.contains('cart__item-info--buttons-minus')) {
     if (cartItems[id - 1].number === 0) { return }
     cartItems[id - 1].number -= 1
     numbers[id - 1].innerHTML = cartItems[id - 1].number

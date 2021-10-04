@@ -265,88 +265,7 @@ body {
   @include xl {
     grid-template-columns: 50% 10% 40%;
   }
-  &__cart {
-    grid-area: cart;
-    width: 100%;
-    min-height: 358px;
-    padding: $space-basic;
-    border: 1px solid var(--cart-border);
-    border-radius: ($space-basic / 2);
-    background-color: var(--cart-bg);
-    @include md {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      padding: 0 $space-lg;
-    }
-    &-title {
-      display: none;
-      @include md {
-        display: block;
-        font-size: 18px;
-        font-weight: bold;
-      }
-    }
-    &-item {
-      margin-bottom: $space-xs;
-      @include md {
-        margin-bottom: 0;
-      }
-      &--img {
-        width: 100px;
-        height: 100px;
-      }
-      &--info {
-        flex-direction: column;
-        align-items: end;
-        color: var(--basic-color);
-        @include lg {
-          width: 65%;
-          flex-direction: row;
-          align-items: start;
-        }
-        &--container {
-          width: 100%;
-          flex-direction: column;
-          align-items: end;
-          @include lg {
-            align-items: start;
-          }
-        }
-        &--name {
-          margin-bottom: 18px;
-        }
-        &--buttons-minus,
-        &--buttons-plus {
-          width: 26px;
-          height: 26px;
-          cursor: pointer;
-        }
-        &--buttons-minus {
-          background: var(--minus-icon) center/contain no-repeat;
-        }
-        &--buttons-plus {
-          background: var(--plus-icon) center/contain no-repeat;
-        }
-        &--number {
-          width: 50px;
-          @extend %makeInnerCenter;
-          margin: 0 ($space-lg / 4);
-        }
-      }
-    }
-    &-info,
-    &-total {
-      border-top: 1px solid var(--cart-info-divider);
-      padding: $space-basic 0;
-      font-size: 14;
-      color: var(--basic-color);
-      & span:last-child {
-        font-weight: bold;
-      }
-    }
-  }
-  .divider {
+  &__divider {
     width: 100%;
     height: 1px;
     background-color: var(--cart-button-divider);
@@ -458,7 +377,7 @@ body {
       .stepper__step--circle-number {
         color: var(--basic-color);
       }
-      .stepper--line {
+      & + .stepper--line {
         background-color: var(--basic-color);
       }
       .stepper__step--info {
@@ -484,7 +403,7 @@ body {
       .stepper__step--info {
         color: var(--basic-color);
       }
-      .stepper--line {
+      & + .stepper--line {
         background-color: var(--basic-color);
       }
     }
@@ -621,6 +540,101 @@ body {
           "num num num ."
           "date . key key";
       }
+    }
+  }
+}
+
+.cart {
+  grid-area: cart;
+  width: 100%;
+  min-height: 358px;
+  padding: $space-basic;
+  border: 1px solid var(--cart-border);
+  border-radius: ($space-basic / 2);
+  background-color: var(--cart-bg);
+  @include md {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 $space-lg;
+  }
+  &__title {
+    display: none;
+    @include md {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $space-xs;
+    @include md {
+      margin-bottom: 0;
+    }
+    &-img {
+      width: 100px;
+      height: 100px;
+    }
+    &-info {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: end;
+      color: var(--basic-color);
+      @include lg {
+        width: 65%;
+        flex-direction: row;
+        align-items: start;
+      }
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: column;
+        align-items: end;
+        @include lg {
+          align-items: start;
+        }
+      }
+      &--name {
+        margin-bottom: 18px;
+      }
+      &--buttons {
+        display: flex;
+        justify-content: space-around;
+        &-minus,
+        &-plus {
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+        }
+        &-minus {
+          background: var(--minus-icon) center/contain no-repeat;
+        }
+        &-plus {
+          background: var(--plus-icon) center/contain no-repeat;
+        }
+      }
+      &--number {
+        width: 50px;
+        @extend %makeInnerCenter;
+        margin: 0 ($space-lg / 4);
+      }
+    }
+  }
+  &__info,
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--cart-info-divider);
+    padding: $space-basic 0;
+    font-size: 14;
+    color: var(--basic-color);
+    & span:last-child {
+      font-weight: bold;
     }
   }
 }
