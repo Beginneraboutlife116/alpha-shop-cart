@@ -5,7 +5,7 @@ const path = require('path')
 module.exports = {
   entry: './src/entry.js',
   output: {
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname),
     filename: 'bundle.js',
     assetModuleFilename: 'images/[hash].png'
   },
