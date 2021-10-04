@@ -64,169 +64,6 @@ body {
   @include xl {
     margin: 0 15%;
   }
-  .header {
-    position: fixed;
-    padding: 20px 0;
-    height: 55px;
-    top: 0;
-    left: 15px;
-    right: 15px;
-    z-index: 9999;
-    background-color: var(--body-bg);
-    @include md {
-      padding: 15px 0;
-      height: 60px;
-      left: 5%;
-      right: 5%;
-    }
-    @include xl {
-      left: 15%;
-      right: 15%;
-    }
-    &__toggleBox {
-      display: block;
-      width: 20px;
-      height: 15px;
-      cursor: pointer;
-      @include md {
-        display: none;
-      }
-      &-icon {
-        display: inherit;
-        position: relative;
-        width: 100%;
-        height: 2px;
-        background-color: var(--basic-color);
-        &::before,
-        &::after {
-          position: absolute;
-          background-color: var(--basic-color);
-          left: 0;
-          transform: translateY(-50%);
-        }
-        &::before {
-          @include afterAndBeforeStyle(75%, 2px);
-          top: 7.5px;
-        }
-        &::after {
-          @include afterAndBeforeStyle(50%, 2px);
-          top: 15px;
-        }
-      }
-    }
-    &__toggleBox--isChecked {
-      display: none;
-      &:checked + nav {
-        transform: scaleY(1);
-      }
-    }
-
-    .nav {
-      position: absolute;
-      top: calc(100% - 10px);
-      width: 100%;
-      height: 100vh;
-      background-color: var(--body-bg);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.25s;
-      z-index: 1;
-      @include md {
-        all: unset;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 30px;
-      }
-      &__menu {
-        @include md {
-          display: flex;
-          justify-content: space-between;
-          width: 35%;
-        }
-        &-list {
-          height: 90px;
-          @extend %makeInnerCenter;
-          border-bottom: 2px solid rgba(42, 42, 42, 0.1);
-          @include md {
-            all: unset;
-            font-size: $font-size-sm;
-          }
-          & a {
-            color: var(--basic-color);
-          }
-        }
-        &-icons {
-          min-width: 72px;
-          width: 40%;
-          margin: 0 auto;
-          padding-top: 24px;
-          @include md {
-            order: 1;
-            margin: 0;
-            padding: 0;
-            width: 15%;
-          }
-          @include xl {
-            width: 12%;
-          }
-          &-search--png {
-            @include iconSetting(--search-icon);
-            cursor: pointer;
-          }
-          &-cart--png {
-            @include iconSetting(--cart-icon);
-          }
-          &-darkmode--png {
-            @include iconSetting(--darkmode-icon);
-            cursor: pointer;
-          }
-        }
-      }
-      // 施作search-bar的input
-      &__search-bar {
-        margin: $space-lg auto;
-        padding: $space-xs $space-lg;
-        border-radius: 99em;
-        box-shadow: inset 0 0 10px var(--input-description);
-        transform-origin: left;
-        transform: scaleX(0);
-        transition: transform 0.1s;
-        border: 1px solid var(--input-border);
-        &::placeholder {
-          color: black;
-        }
-        @include md {
-          position: absolute;
-          transform-origin: center;
-          top: 50%;
-          right: 0;
-        }
-        @include xl {
-          right: calc(12% + 16px);
-          margin: 0;
-          transform-origin: right;
-        }
-      }
-      #search:checked + .nav__search-bar {
-        transform: scaleX(1);
-      }
-    }
-
-    &__logo-block {
-      width: 140px;
-      height: 25px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      background: var(--logo) center/contain no-repeat;
-      transform: translate(-50%, -50%);
-      @include lg {
-        width: 170px;
-        height: 30px;
-      }
-    }
-  }
   .title {
     margin-top: $space-basic;
     font-size: $font-size-lg;
@@ -601,6 +438,173 @@ body {
           transform: rotate(180deg);
         }
       }
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  padding: 20px 0;
+  height: 55px;
+  top: 0;
+  left: 15px;
+  right: 15px;
+  z-index: 9999;
+  background-color: var(--body-bg);
+  @include md {
+    padding: 15px 0;
+    height: 60px;
+    left: 5%;
+    right: 5%;
+  }
+  @include xl {
+    left: 15%;
+    right: 15%;
+  }
+  .toggleBox {
+  display: block;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  @include md {
+    display: none;
+  }
+  &-icon {
+    display: inherit;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: var(--basic-color);
+    &::before,
+    &::after {
+      position: absolute;
+      background-color: var(--basic-color);
+      left: 0;
+      transform: translateY(-50%);
+    }
+    &::before {
+      @include afterAndBeforeStyle(75%, 2px);
+      top: 7.5px;
+    }
+    &::after {
+      @include afterAndBeforeStyle(50%, 2px);
+      top: 15px;
+    }
+  }
+  &-checkbox {
+    display: none;
+    &:checked + .nav {
+      transform: scaleY(1);
+    }
+  }
+  }
+  .nav {
+    position: absolute;
+    top: calc(100% - 10px);
+    width: 100%;
+    height: 100vh;
+    background-color: var(--body-bg);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.25s;
+    z-index: 1;
+    @include md {
+      all: unset;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+    }
+    &__searchBar--none {
+      display: none;
+      &:checked + nav__searchBar--block {
+        transform: scaleX(1);
+      }
+    }
+    &__searchBar--block {
+      display: block;
+      margin: $space-lg auto;
+      padding: $space-xs $space-lg;
+      border-radius: 99em;
+      box-shadow: inset 0 0 10px var(--input-description);
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.1s;
+      border: 1px solid var(--input-border);
+      &::placeholder {
+        color: black;
+      }
+      @include md {
+        position: absolute;
+        transform-origin: center;
+        top: 50%;
+        right: 0;
+      }
+      @include xl {
+        right: calc(12% + 16px);
+        margin: 0;
+        transform-origin: right;
+      }
+    }
+  }
+  .menu {
+  @include md {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+  }
+  &__list {
+    height: 90px;
+    @extend %makeInnerCenter;
+    border-bottom: 2px solid rgba(42, 42, 42, 0.1);
+    @include md {
+      all: unset;
+      font-size: $font-size-sm;
+    }
+    &-link {
+      color: var(--basic-color);
+    }
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    min-width: 72px;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 24px;
+    @include md {
+      order: 1;
+      margin: 0;
+      padding: 0;
+      width: 15%;
+    }
+    @include xl {
+      width: 12%;
+    }
+    &--search--png {
+      @include iconSetting(--search-icon);
+      cursor: pointer;
+    }
+    &--cart--png {
+      @include iconSetting(--cart-icon);
+    }
+    &--darkMode--png {
+      @include iconSetting(--darkmode-icon);
+      cursor: pointer;
+    }
+  }
+  }
+  .logo--img {
+    width: 140px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--logo) center/contain no-repeat;
+    transform: translate(-50%, -50%);
+    @include lg {
+      width: 170px;
+      height: 30px;
     }
   }
 }

@@ -10,42 +10,42 @@
     <div id="cart-app">
       <main class="container">
         <header class="header">
-          <label for="navToggleBox" class="header__toggleBox">
-            <span class="header__toggleBox-icon"></span>
+          <label for="navToggleBox" class="toggleBox">
+            <span class="toggleBox-icon"></span>
           </label>
-          <input type="checkbox" id="navToggleBox" class="header__toggleBox--isChecked"/>
+          <input type="checkbox" id="navToggleBox" class="toggleBox-checkbox"/>
           <nav class="nav">
-            <ul class="nav__menu">
-              <li class="nav__menu-list"><a href="#">男款</a></li>
-              <li class="nav__menu-list"><a href="#">女款</a></li>
-              <li class="nav__menu-list"><a href="#">最新消息</a></li>
-              <li class="nav__menu-list"><a href="#">聯絡我們</a></li>
-              <li class="nav__menu-list"><a href="#">客製商品</a></li>
+            <ul class="menu">
+              <li class="menu__list"><a href="#" class="menu__list-link">男款</a></li>
+              <li class="menu__list"><a href="#" class="menu__list-link">女款</a></li>
+              <li class="menu__list"><a href="#" class="menu__list-link">最新消息</a></li>
+              <li class="menu__list"><a href="#" class="menu__list-link">聯絡我們</a></li>
+              <li class="menu__list"><a href="#" class="menu__list-link">客製商品</a></li>
             </ul>
-            <div class="nav__menu-icons d-flex jc-between">
+            <div class="menu__icons">
               <label
                 for="search"
-                class="nav__menu-icons-search"
+                class="menu__icons--search"
                 aria-label="search clothes"
               >
-                <div class="nav__menu-icons-search--png"></div>
+                <div class="menu__icons--search--png"></div>
               </label>
-              <a href="/" class="nav__menu-icons-cart">
-                <div class="nav__menu-icons-cart--png"></div>
+              <a href="/" class="menu__icons--cart">
+                <div class="menu__icons--cart--png"></div>
               </a>
-              <div class="nav__menu-icons-darkmode--png" id="dark-mode-toggle"></div>
+              <div class="menu__icons--darkMode--png" id="darkModeToggle"></div>
               
             </div>
-            <input type="checkbox" id="search" class="d-none"/>
+            <input type="checkbox" id="search" class="nav__searchBar--none"/>
             <input
                 type="text"
-                class="nav__search-bar d-block"
+                class="nav__searchBar--block"
                 placeholder="e.g T-shirts"
               />
           </nav>
-          <div class="header__logo-block">
+          <div class="logo">
             <a href="#">
-              <div class="header__logo-block--img"></div>
+              <div class="logo--img"></div>
             </a>
           </div>
         </header>
