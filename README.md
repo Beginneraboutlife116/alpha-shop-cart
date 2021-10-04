@@ -6,11 +6,15 @@ And I have increase dark mode toggle to it.</br>
 
 ## Images
 ### Small-size
-<img src="./src/images/view-sample/small-size.png" width="200px">
+<img src="./src/images/view-sample/small-size.png" width="300px">
+
 ### Large-size
-![large-size](./src/images/view-sample/large-size.png)
+<img src="./src/images/view-sample/large-size.png" width="500px">
+
 ### Small-size-dark-mode
-![small-size-dark-mode](./src/images/view-sample/small-size-dark-mode.png)
+<img src="./src/images/view-sample/small-size-dark-mode.png" width="300px">
+
 ### Large-size-dark-mode
-![large-size-dark-mode](./src/images/view-sample/large-size-dark-mode.png)
+<img src="./src/images/view-sample/large-size-dark-mode.png" width="500px">
+
 ## How to use it.
