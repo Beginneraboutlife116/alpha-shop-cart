@@ -654,7 +654,10 @@ body {
   @include xl {
     padding: 0 15%;
   }
-  &-container {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
     padding: 64px 0;
   }
   &__logo {
@@ -665,7 +668,7 @@ body {
   }
   &__section {
     &-title {
-      margin-bottom: $space-lg;
+      margin-bottom: $space-basic;
       color: var(--basic-color);
       font-size: $space-lg;
       font-weight: bold;
@@ -675,6 +678,8 @@ body {
       color: var(--input-description);
     }
     &-icons {
+      display: flex;
+      justify-content: space-between;
       width: 50%;
       &--facebook {
         @include iconSetting(--facebook);
