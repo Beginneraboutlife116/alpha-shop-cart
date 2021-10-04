@@ -1,8 +1,8 @@
 # alpha-shop-cart
-This project is my recent practice for using SCSS to layout a shop cart called alpha shop.</br>
-And also, I try to practice webpack for bundling whole my scss, javascripts files.</br>
-It takes time to have research about how to use webpack.</br>
-And I have increase dark mode toggle to it.</br>
+<p>This project is my recent practice for using SCSS to layout a shop cart called alpha shop.</p>
+<p>And also, I try to practice webpack for bundling whole my scss, javascripts files.</p>
+<p>It takes time to have research about how to use webpack.</p>
+<p>And I have increase dark mode toggle to it.</p>
 
 ## Images
 ### Small-size
