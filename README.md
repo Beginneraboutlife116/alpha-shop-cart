@@ -27,23 +27,23 @@
 <h3>Install</h3>
 <ol>
   <li>
-    Open your terminal and use git to clone this project
+    <p>Open your terminal and use git to clone this project</p>
     <code>git clone https://github.com/Beginneraboutlife116/alpha-shop-cart.git</code>
   </li>
   <li>
-    Enter alpha-shop-cart directory
+    <p>Enter alpha-shop-cart directory</p>
     <code>cd alpha-shop-cart</code>
   </li>
   <li>
-    Install npm
+    <p>Install npm</p>
     <code>npm install -y</code>
   </li>
   <li>
-    Use "run dev" to open the localhost:8000
+    <p>Use "run dev" to open the localhost:8000</p>
     <code>npm run dev</code>
   </li>
   <li>
-    You can use http://localhost:8000 to see the result.</br>
-    Or you can just watch the github page.
+    <p>You can use http://localhost:8000 to see the result.</p>
+    <p>Or you can just watch the github page.</p>
   </li>
 </ol>
