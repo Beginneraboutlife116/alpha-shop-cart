@@ -6,7 +6,7 @@ And I have increase dark mode toggle to it.</br>
 
 ## Images
 ### Small-size
-![small-size](./src/images/view-sample/small-size.png)
+<img src="./src/images/view-sample/small-size.png" width="200px">
 ### Large-size
 ![large-size](./src/images/view-sample/large-size.png)
 ### Small-size-dark-mode
