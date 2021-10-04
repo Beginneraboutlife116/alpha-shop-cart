@@ -43,7 +43,7 @@
     <code>npm run dev</code>
   </li>
   <li>
-    <p>You can use http://localhost:8000 to see the result.</p>
+    <p>You can use http://localhost:8080 to see the result.</p>
     <p>Or you can just watch the github page.</p>
   </li>
 </ol>
