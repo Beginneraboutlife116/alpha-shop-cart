@@ -16,7 +16,7 @@ function buttonClickControlForm(e) {
     stepCount += 1
     toggleFormsDisplay(presentStepCount, stepCount)
     controlStepsStyle(presentStepCount, stepCount)
-    btnPrev.classList.remove('disabled')
+    btnPrev.classList.remove('btn__prev--disabled')
     modifyBtn()
   } else if (target.classList.contains('btn__prev')) {
     stepCount -= 1
@@ -24,8 +24,8 @@ function buttonClickControlForm(e) {
     controlStepsStyle(presentStepCount, stepCount)
     modifyBtn()
     btnNext.innerHTML = `
-      <span>下一步</span>
-      <div class="white-arrow"></div>
+      <span class="btn__next-info">下一步</span>
+      <div class="btn__next-icon"></div>
     `
   }
 }
@@ -49,7 +49,7 @@ function controlStepsStyle (presentNum, futureNum) {
 
 function modifyBtn () {
   if (stepCount === 0) {
-    return btnPrev.classList.add('disabled')
+    return btnPrev.classList.add('btn__prev--disabled')
   }
   if (stepCount === 2) {
     return btnNext.innerHTML = "確認下單"
