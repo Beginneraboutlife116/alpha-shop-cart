@@ -73,54 +73,54 @@
               <div class="stepper__step--info">付款資訊</div>
             </div>
           </div>
-          <form id="content__form" class="content__form">
-            <div class="content__form-part">
-              <p class="content__form-part-title">寄送地址</p>
-              <div class="content__form-part-address d-grid">
-                <div class="form-row mrms">
-                  <label for="mrms" class="content__form-part-address--mrms" aria-label="choose Mr. or Miss"
+          <form id="form" class="form">
+            <div class="form__part">
+              <p class="form__part-title">寄送地址</p>
+              <div class="form__part-address">
+                <div class="formRow--mrms">
+                  <label for="mrms" class="formRow--label" aria-label="choose Mr. or Miss"
                     >稱謂</label
                   >
-                  <div class="select-wrapper">
-                    <select name="mrms" id="mrms">
+                  <div class="formRow--select-wrapper">
+                    <select name="mrms" id="mrms" class="formRow--select">
                       <option value="Mr.">先生</option>
                       <option value="Ms.">小姐</option>
                     </select>
                   </div>
                 </div>
-                <div class="form-row name">
-                  <label for="name" class="content__form-part-address--name" aria-label="enter your name"
+                <div class="formRow--name">
+                  <label for="name" class="formRow--label" aria-label="enter your name"
                     >姓名</label
                   >
-                  <input type="text" id="name" placeholder="請輸入姓名" />
+                  <input type="text" id="name" placeholder="請輸入姓名" class="formRow--inputText"/>
                 </div>
-                <div class="form-row tel">
+                <div class="formRow--tel">
                   <label
                     for="tel"
-                    class="content__form-part-address--tel"
+                    class="formRow--label"
                     aria-label="enter your mobile phone number"
                     >電話</label
                   >
-                  <input type="text" id="tel" placeholder="請輸入行動電話" />
+                  <input type="text" id="tel" placeholder="請輸入行動電話" class="formRow--inputText"/>
                 </div>
-                <div class="form-row email">
+                <div class="formRow--email">
                   <label
                     for="email"
-                    class="content__form-part-address--email"
+                    class="formRow--label"
                     aria-label="enter your email address"
                     >Email</label
                   >
-                  <input type="email" id="email" placeholder="請輸入電子郵件"/>
+                  <input type="email" id="email" placeholder="請輸入電子郵件" class="formRow--inputEmail"/>
                 </div>
-                <div class="form-row city">
+                <div class="formRow--city">
                   <label
                     for="city"
-                    class="content__form-part-address--city"
+                    class="formRow--label"
                     aria-label="select your city location"
                     >縣市</label
                   >
-                  <div class="select-wrapper">
-                    <select name="city" id="city" required>
+                  <div class="formRow--select-wrapper">
+                    <select name="city" id="city" class="formRow--select" required>
                       <option value="" disabled selected>請選擇縣市</option>
                       <option value="keelung">基隆</option>
                       <option value="new taipei">新北</option>
@@ -143,27 +143,27 @@
                     </select>
                   </div>
                 </div>
-                <div class="form-row address">
+                <div class="formRow--address">
                   <label
                     for="address"
-                    class="content__form-part-address--address"
+                    class="formRow--label"
                     aria-label="enter your local address"
                     >地址</label
                   >
-                  <input type="text" id="address" placeholder="請輸入地址" />
+                  <input type="text" id="address" placeholder="請輸入地址" class="formRow--inputText"/>
                 </div>
               </div>
             </div>
-            <div class="content__form-part d-none">
-              <p class="content__form-part-title">運送方式</p>
-              <div class="content__form-part-delivery">
+            <div class="form__part d-none">
+              <p class="form__part-title">運送方式</p>
+              <div class="form__part-delivery">
                 <label
                   for="standard-way"
-                  class="content__form-part-delivery--method d-flex ai-center"
+                  class="form__part-delivery--method"
                   aria-label="choose standard delivery way"
                 >
-                  <input type="radio" id="standard-way" name="delivery-way" />
-                  <div class="content__form-part-delivery--method--standard d-flex jc-between">
+                  <input type="radio" id="standard-way" name="delivery-way" class="form__part-delivery--method-radio"/>
+                  <div class="form__part-delivery--method-standard">
                     <div>
                       <p class="radio-info">標準運送</p>
                       <p>免費</p>
@@ -173,11 +173,11 @@
                 </label>
                 <label
                   for="dhl-way"
-                  class="content__form-part-delivery--method d-flex ai-center"
+                  class="form__part-delivery--method"
                   aria-label="choose dhl delivery way"
                 >
-                  <input type="radio" id="dhl-way" name="delivery-way" />
-                  <div class="content__form-part-delivery--method--dhl d-flex jc-between">
+                  <input type="radio" id="dhl-way" name="delivery-way" class="form__part-delivery--method-radio"/>
+                  <div class="form__part-delivery--method-dhl">
                     <div>
                       <p class="radio-info">DHL 貨運</p>
                       <p>$500</p>
@@ -187,22 +187,22 @@
                 </label>
               </div>
             </div>
-            <div class="content__form-part d-none">
-              <p class="content__form-part-title">付款資訊</p>
-              <div class="content__form-part-payment d-grid">
-                <div class="form-row holder">
+            <div class="form__part d-none">
+              <p class="form__part-title">付款資訊</p>
+              <div class="form__part-payment">
+                <div class="formRow--holder">
                   <label
                     for="holder"
-                    class="content__form-part-payment--holder"
+                    class="formRow--label"
                     aria-label="enter the name on the credit card"
                     >持卡人姓名</label
                   >
-                  <input type="text" id="holder" placeholder="John Doe" />
+                  <input type="text" id="holder" placeholder="John Doe" class="formRow--inputText"/>
                 </div>
-                <div class="form-row num">
+                <div class="formRow--num">
                   <label
                     for="num"
-                    class="content__form-part-payment--num"
+                    class="formRow--label"
                     aria-label="enter your card's number"
                     >卡號</label
                   >
@@ -210,25 +210,26 @@
                     type="text"
                     id="num"
                     placeholder="1111 2222 3333 4444"
+                    class="formRow--inputText"
                   />
                 </div>
-                <div class="form-row date">
+                <div class="formRow--date">
                   <label
                     for="date"
-                    class="content__form-part-payment--validDate"
+                    class="formRow--label"
                     aria-label="choose the valid date"
                     >有效期限</label
                   >
-                  <input type="date" id="date" placeholder="MM/YY" />
+                  <input type="date" id="date" placeholder="MM/YY" class="formRow--inputDate"/>
                 </div>
-                <div class="form-row key">
+                <div class="formRow--key">
                   <label
                     for="key"
-                    class="content__form-part-payment--key"
+                    class="formRow--label"
                     aria-label="enter your CVC or CCV"
                     >CVC / CCV</label
                   >
-                  <input type="text" id="key" maxlength="3"/>
+                  <input type="text" id="key" maxlength="3" class="formRow--inputText"/>
                 </div>
               </div>
             </div>

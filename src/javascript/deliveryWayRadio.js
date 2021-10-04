@@ -1,5 +1,5 @@
 const inputRadios = document.querySelectorAll('input[type="radio"]')
-const deliveryWayPanel = document.querySelector('.content__form-part-delivery')
+const deliveryWayPanel = document.querySelector('.form__part-delivery')
 
 function deliveryWayChecked (e) {
   for (let i = 0; i < inputRadios.length; i++) {

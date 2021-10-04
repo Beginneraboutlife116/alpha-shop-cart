@@ -1,5 +1,5 @@
 const btn = document.querySelector(".btn")
-const forms = document.querySelectorAll('.content__form-part')
+const forms = document.querySelectorAll('.form__part')
 const btnPrev = document.querySelector('.btn__prev')
 const btnNext = document.querySelector('.btn__next')
 const steps = document.querySelectorAll('.stepper__step')
