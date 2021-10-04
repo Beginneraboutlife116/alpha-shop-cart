@@ -2,7 +2,7 @@ const btn = document.querySelector(".btn")
 const forms = document.querySelectorAll('.content__form-part')
 const btnPrev = document.querySelector('.btn__prev')
 const btnNext = document.querySelector('.btn__next')
-const steps = document.querySelectorAll('.content__stepper-step')
+const steps = document.querySelectorAll('.stepper__step')
 
 let stepCount = 0
 
@@ -37,13 +37,13 @@ function toggleFormsDisplay (presentNum, futureNum) {
 
 function controlStepsStyle (presentNum, futureNum) {
   if (presentNum < futureNum) {
-    steps[presentNum].classList.remove('active')
-    steps[presentNum].classList.add('finished')
-    steps[futureNum].classList.add('active')
+    steps[presentNum].classList.remove('stepper__step--active')
+    steps[presentNum].classList.add('stepper__step--finished')
+    steps[futureNum].classList.add('stepper__step--active')
   } else {
-    steps[presentNum].classList.remove('active')
-    steps[futureNum].classList.remove('finished')
-    steps[futureNum].classList.add('active')
+    steps[presentNum].classList.remove('stepper__step--active')
+    steps[futureNum].classList.remove('stepper__step--finished')
+    steps[futureNum].classList.add('stepper__step--active')
   }
 }
 

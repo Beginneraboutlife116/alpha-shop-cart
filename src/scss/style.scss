@@ -64,7 +64,7 @@ body {
   @include xl {
     margin: 0 15%;
   }
-  .title {
+  &__title {
     margin-top: $space-basic;
     font-size: $font-size-lg;
     font-weight: bold;
@@ -73,371 +73,6 @@ body {
     @include md {
       margin-top: 80px;
       font-size: $font-size-xl;
-    }
-  }
-  .content {
-    @include md {
-      display: grid;
-      grid-template: 48px 24px 64px 288px 48px 2px 24px 46px / 50% 5% 45%;
-      grid-template-areas:
-        ". . ."
-        "stepper . cart"
-        ". . cart"
-        "form . cart"
-        ". . cart"
-        "divider . cart"
-        ". . cart"
-        "btn . cart";
-    }
-    @include xl {
-      grid-template-columns: 50% 10% 40%;
-    }
-    &__stepper {
-      padding: 24px 0;
-      grid-area: stepper;
-      @include md {
-        padding: 0;
-      }
-      &-step {
-        position: relative;
-        &--circle {
-          @extend %makeInnerCenter;
-          width: $space-xl;
-          height: $space-xl;
-          border-radius: 50%;
-          border: 1px solid var(--step-circle-unfinished-color);
-          @include md {
-            width: $space-lg;
-            height: $space-lg;
-          }
-          & span {
-            font-size: $font-size-md;
-            color: var(--step-circle-unfinished-color);
-            @include md {
-              font-size: $font-size-xs;
-            }
-          }
-        }
-        &--info {
-          display: none;
-          @include lg {
-            display: block;
-            margin-left: ($space-basic / 2);
-            color: var(--step-circle-unfinished-color);
-          }
-        }
-      }
-      .finished {
-        .content__stepper-step--circle {
-          background-color: $gray-7;
-          border-color: var(--stepActiveFinished-circleBorderColor);
-          & span {
-            display: none;
-          }
-          &::after {
-            @include afterAndBeforeStyle(20px, 20px);
-            background: url("../images/icon-check.png") center/contain no-repeat;
-            @include md {
-              width: 16px;
-              height: 16px;
-            }
-          }
-        }
-        .content__stepper-step--info {
-          color: var(--basic-color);
-        }
-        & + span {
-          background-color: var(--basic-color);
-        }
-      }
-      .active {
-        .content__stepper-step--circle {
-          border-color: var(--stepActiveFinished-circleBorderColor);
-          background-color: var(--step-circle-bgc);
-        }
-        & span {
-          color: var(--basic-color);
-        }
-        & + span {
-          background-color: var(--basic-color);
-        }
-        .content__stepper-step--info {
-          color: var(--basic-color);
-        }
-      }
-      &--line {
-        display: block;
-        min-width: 15%;
-        height: 2px;
-        background-color: var(--step-circle-unfinished-color);
-      }
-    }
-    &__form {
-      grid-area: form;
-      margin-bottom: $space-xl;
-      &-part {
-        &-title {
-          margin-bottom: $space-lg;
-          font-size: $font-size-lg;
-        }
-        .form-row {
-          & label {
-            display: block;
-            margin-bottom: ($space-basic / 2);
-            font-size: $font-size-xs;
-            color: var(--input-description);
-          }
-          & .select-wrapper {
-            width: 100%;
-            position: relative;
-            z-index: 0;
-            &::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              right: $space-basic;
-              transform: translate(-50%, -50%);
-              border-width: 5px 4.5px 0 4.5px;
-              border-color: var(--basic-color) transparent transparent
-                transparent;
-              border-style: solid;
-              z-index: -1;
-            }
-            & select {
-              @extend %input-style;
-              -webkit-appearance: none;
-              appearance: none;
-              &:invalid {
-                color: $gray-5;
-              }
-            }
-          }
-          & input[type="text"],
-          input[type="email"],
-          input[type="date"] {
-            @extend %input-style;
-          }
-        }
-        &-address {
-          grid-template: auto / 40% 10% 50%;
-          grid-template-areas:
-            "mrms . name"
-            "tel tel tel"
-            "email email email"
-            "city city city"
-            "address address address";
-          row-gap: $space-basic;
-          @include md {
-            grid-template: auto / 5fr 1fr 2fr 1fr 8fr;
-            grid-template-areas:
-              "mrms . name name name"
-              "tel tel tel . email"
-              "city . address address address";
-          }
-        }
-        &-delivery {
-          &--method {
-            width: 100%;
-            height: 60px;
-            border: 1px solid var(--box-unchecked-border);
-            border-radius: 4px;
-            background-color: transparent;
-            cursor: pointer;
-            & input[type="radio"] {
-              appearance: none;
-              -webkit-appearance: none;
-              width: 20px;
-              height: 20px;
-              margin: 20px;
-              border: 1px solid #333;
-              border-radius: 50%;
-              background-color: var(--box-unchecked-bg);
-              &:checked {
-                background-color: white;
-                border-width: 6px;
-              }
-            }
-            &--standard,
-            &--dhl {
-              width: 80%;
-              font-size: $font-size-xs;
-              color: var(--basic-color);
-              .radio-info {
-                font-size: $font-size-sm;
-              }
-            }
-          }
-          .checked {
-            border-color: var(--box-checked-border);
-          }
-          & label:first-child {
-            margin-bottom: $space-lg;
-          }
-        }
-        &-payment {
-          grid-template: auto / 45% 10% 45%;
-          grid-template-areas:
-            "holder holder holder"
-            "num num num"
-            "date . key";
-          row-gap: $space-basic;
-          & input[type="date"] {
-            color: var(--input-description);
-          }
-          @include md {
-            grid-template: auto / 8fr 1fr 2fr 6fr;
-            grid-template-areas:
-              "holder holder holder ."
-              "num num num ."
-              "date . key key";
-          }
-        }
-      }
-    }
-    &__cart {
-      grid-area: cart;
-      width: 100%;
-      min-height: 358px;
-      padding: $space-basic;
-      border: 1px solid var(--cart-border);
-      border-radius: ($space-basic / 2);
-      background-color: var(--cart-bg);
-      @include md {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        padding: 0 $space-lg;
-      }
-      &-title {
-        display: none;
-        @include md {
-          display: block;
-          font-size: 18px;
-          font-weight: bold;
-        }
-      }
-      &-item {
-        margin-bottom: $space-xs;
-        @include md {
-          margin-bottom: 0;
-        }
-        &--img {
-          width: 100px;
-          height: 100px;
-        }
-        &--info {
-          flex-direction: column;
-          align-items: end;
-          color: var(--basic-color);
-          @include lg {
-            width: 65%;
-            flex-direction: row;
-            align-items: start;
-          }
-          &--container {
-            width: 100%;
-            flex-direction: column;
-            align-items: end;
-            @include lg {
-              align-items: start;
-            }
-          }
-          &--name {
-            margin-bottom: 18px;
-          }
-          &--buttons-minus,
-          &--buttons-plus {
-            width: 26px;
-            height: 26px;
-            cursor: pointer;
-          }
-          &--buttons-minus {
-            background: var(--minus-icon) center/contain no-repeat;
-          }
-          &--buttons-plus {
-            background: var(--plus-icon) center/contain no-repeat;
-          }
-          &--number {
-            width: 50px;
-            @extend %makeInnerCenter;
-            margin: 0 ($space-lg / 4);
-          }
-        }
-      }
-      &-info,
-      &-total {
-        border-top: 1px solid var(--cart-info-divider);
-        padding: $space-basic 0;
-        font-size: 14;
-        color: var(--basic-color);
-        & span:last-child {
-          font-weight: bold;
-        }
-      }
-    }
-    .divider {
-      width: 100%;
-      height: 1px;
-      background-color: var(--cart-button-divider);
-      margin-top: $space-xl;
-      grid-area: divider;
-      @include md {
-        margin: 0;
-      }
-    }
-    .btn {
-      margin-top: $space-lg;
-      z-index: 0;
-      grid-area: btn;
-      @include md {
-        display: grid;
-        grid-template-columns: 30% 1fr 30%;
-        margin-top: 0;
-      }
-      &__prev {
-        @extend %makeInnerCenter;
-        height: 46px;
-        width: 40%;
-        @include md {
-          grid-column: 1 / 2;
-          width: 100%;
-        }
-        & span {
-          margin-left: $space-xs;
-          color: var(--basic-color);
-        }
-        &::before {
-          @include afterAndBeforeStyle(24px, 24px);
-          background: var(--arrow-black) center/contain no-repeat;
-        }
-      }
-      & .disabled {
-        display: none;
-        & + .btn__next {
-          width: 100%;
-        }
-      }
-      &__next {
-        @extend %makeInnerCenter;
-        width: 40%;
-        height: 46px;
-        border-radius: 8px;
-        background-color: $main-button-color;
-        color: $white;
-        @include md {
-          grid-column: 3 / 4;
-          width: 100%;
-        }
-        & span {
-          margin-right: $space-xs;
-        }
-        & div {
-          width: 24px;
-          height: 24px;
-          background: var(--arrow-white) center/contain no-repeat;
-          transform: rotate(180deg);
-        }
-      }
     }
   }
 }
@@ -461,7 +96,9 @@ body {
     left: 15%;
     right: 15%;
   }
-  .toggleBox {
+}
+
+.toggleBox {
   display: block;
   width: 20px;
   height: 15px;
@@ -497,57 +134,59 @@ body {
       transform: scaleY(1);
     }
   }
+}
+
+.nav {
+  position: absolute;
+  top: calc(100% - 10px);
+  width: 100%;
+  height: 100vh;
+  background-color: var(--body-bg);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s;
+  z-index: 1;
+  @include md {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
   }
-  .nav {
-    position: absolute;
-    top: calc(100% - 10px);
-    width: 100%;
-    height: 100vh;
-    background-color: var(--body-bg);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.25s;
-    z-index: 1;
+  &__searchBar--none {
+    display: none;
+    &:checked + nav__searchBar--block {
+      transform: scaleX(1);
+    }
+  }
+  &__searchBar--block {
+    display: block;
+    margin: $space-lg auto;
+    padding: $space-xs $space-lg;
+    border-radius: 99em;
+    box-shadow: inset 0 0 10px var(--input-description);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s;
+    border: 1px solid var(--input-border);
+    &::placeholder {
+      color: black;
+    }
     @include md {
-      all: unset;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 30px;
+      position: absolute;
+      transform-origin: center;
+      top: 50%;
+      right: 0;
     }
-    &__searchBar--none {
-      display: none;
-      &:checked + nav__searchBar--block {
-        transform: scaleX(1);
-      }
-    }
-    &__searchBar--block {
-      display: block;
-      margin: $space-lg auto;
-      padding: $space-xs $space-lg;
-      border-radius: 99em;
-      box-shadow: inset 0 0 10px var(--input-description);
-      transform-origin: left;
-      transform: scaleX(0);
-      transition: transform 0.1s;
-      border: 1px solid var(--input-border);
-      &::placeholder {
-        color: black;
-      }
-      @include md {
-        position: absolute;
-        transform-origin: center;
-        top: 50%;
-        right: 0;
-      }
-      @include xl {
-        right: calc(12% + 16px);
-        margin: 0;
-        transform-origin: right;
-      }
+    @include xl {
+      right: calc(12% + 16px);
+      margin: 0;
+      transform-origin: right;
     }
   }
-  .menu {
+}
+
+.menu {
   @include md {
     display: flex;
     justify-content: space-between;
@@ -593,19 +232,389 @@ body {
       cursor: pointer;
     }
   }
+}
+
+.logo--img {
+  width: 140px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--logo) center/contain no-repeat;
+  transform: translate(-50%, -50%);
+  @include lg {
+    width: 170px;
+    height: 30px;
   }
-  .logo--img {
-    width: 140px;
-    height: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: var(--logo) center/contain no-repeat;
-    transform: translate(-50%, -50%);
-    @include lg {
-      width: 170px;
-      height: 30px;
+}
+
+.content {
+  @include md {
+    display: grid;
+    grid-template: 48px 24px 64px 288px 48px 2px 24px 46px / 50% 5% 45%;
+    grid-template-areas:
+      ". . ."
+      "stepper . cart"
+      ". . cart"
+      "form . cart"
+      ". . cart"
+      "divider . cart"
+      ". . cart"
+      "btn . cart";
+  }
+  @include xl {
+    grid-template-columns: 50% 10% 40%;
+  }
+  &__form {
+    grid-area: form;
+    margin-bottom: $space-xl;
+    &-part {
+      &-title {
+        margin-bottom: $space-lg;
+        font-size: $font-size-lg;
+      }
+      .form-row {
+        & label {
+          display: block;
+          margin-bottom: ($space-basic / 2);
+          font-size: $font-size-xs;
+          color: var(--input-description);
+        }
+        & .select-wrapper {
+          width: 100%;
+          position: relative;
+          z-index: 0;
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: $space-basic;
+            transform: translate(-50%, -50%);
+            border-width: 5px 4.5px 0 4.5px;
+            border-color: var(--basic-color) transparent transparent transparent;
+            border-style: solid;
+            z-index: -1;
+          }
+          & select {
+            @extend %input-style;
+            -webkit-appearance: none;
+            appearance: none;
+            &:invalid {
+              color: $gray-5;
+            }
+          }
+        }
+        & input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+          @extend %input-style;
+        }
+      }
+      &-address {
+        grid-template: auto / 40% 10% 50%;
+        grid-template-areas:
+          "mrms . name"
+          "tel tel tel"
+          "email email email"
+          "city city city"
+          "address address address";
+        row-gap: $space-basic;
+        @include md {
+          grid-template: auto / 5fr 1fr 2fr 1fr 8fr;
+          grid-template-areas:
+            "mrms . name name name"
+            "tel tel tel . email"
+            "city . address address address";
+        }
+      }
+      &-delivery {
+        &--method {
+          width: 100%;
+          height: 60px;
+          border: 1px solid var(--box-unchecked-border);
+          border-radius: 4px;
+          background-color: transparent;
+          cursor: pointer;
+          & input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            margin: 20px;
+            border: 1px solid #333;
+            border-radius: 50%;
+            background-color: var(--box-unchecked-bg);
+            &:checked {
+              background-color: white;
+              border-width: 6px;
+            }
+          }
+          &--standard,
+          &--dhl {
+            width: 80%;
+            font-size: $font-size-xs;
+            color: var(--basic-color);
+            .radio-info {
+              font-size: $font-size-sm;
+            }
+          }
+        }
+        .checked {
+          border-color: var(--box-checked-border);
+        }
+        & label:first-child {
+          margin-bottom: $space-lg;
+        }
+      }
+      &-payment {
+        grid-template: auto / 45% 10% 45%;
+        grid-template-areas:
+          "holder holder holder"
+          "num num num"
+          "date . key";
+        row-gap: $space-basic;
+        & input[type="date"] {
+          color: var(--input-description);
+        }
+        @include md {
+          grid-template: auto / 8fr 1fr 2fr 6fr;
+          grid-template-areas:
+            "holder holder holder ."
+            "num num num ."
+            "date . key key";
+        }
+      }
     }
+  }
+  &__cart {
+    grid-area: cart;
+    width: 100%;
+    min-height: 358px;
+    padding: $space-basic;
+    border: 1px solid var(--cart-border);
+    border-radius: ($space-basic / 2);
+    background-color: var(--cart-bg);
+    @include md {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 0 $space-lg;
+    }
+    &-title {
+      display: none;
+      @include md {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    &-item {
+      margin-bottom: $space-xs;
+      @include md {
+        margin-bottom: 0;
+      }
+      &--img {
+        width: 100px;
+        height: 100px;
+      }
+      &--info {
+        flex-direction: column;
+        align-items: end;
+        color: var(--basic-color);
+        @include lg {
+          width: 65%;
+          flex-direction: row;
+          align-items: start;
+        }
+        &--container {
+          width: 100%;
+          flex-direction: column;
+          align-items: end;
+          @include lg {
+            align-items: start;
+          }
+        }
+        &--name {
+          margin-bottom: 18px;
+        }
+        &--buttons-minus,
+        &--buttons-plus {
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+        }
+        &--buttons-minus {
+          background: var(--minus-icon) center/contain no-repeat;
+        }
+        &--buttons-plus {
+          background: var(--plus-icon) center/contain no-repeat;
+        }
+        &--number {
+          width: 50px;
+          @extend %makeInnerCenter;
+          margin: 0 ($space-lg / 4);
+        }
+      }
+    }
+    &-info,
+    &-total {
+      border-top: 1px solid var(--cart-info-divider);
+      padding: $space-basic 0;
+      font-size: 14;
+      color: var(--basic-color);
+      & span:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--cart-button-divider);
+    margin-top: $space-xl;
+    grid-area: divider;
+    @include md {
+      margin: 0;
+    }
+  }
+  .btn {
+    margin-top: $space-lg;
+    z-index: 0;
+    grid-area: btn;
+    @include md {
+      display: grid;
+      grid-template-columns: 30% 1fr 30%;
+      margin-top: 0;
+    }
+    &__prev {
+      @extend %makeInnerCenter;
+      height: 46px;
+      width: 40%;
+      @include md {
+        grid-column: 1 / 2;
+        width: 100%;
+      }
+      & span {
+        margin-left: $space-xs;
+        color: var(--basic-color);
+      }
+      &::before {
+        @include afterAndBeforeStyle(24px, 24px);
+        background: var(--arrow-black) center/contain no-repeat;
+      }
+    }
+    & .disabled {
+      display: none;
+      & + .btn__next {
+        width: 100%;
+      }
+    }
+    &__next {
+      @extend %makeInnerCenter;
+      width: 40%;
+      height: 46px;
+      border-radius: 8px;
+      background-color: $main-button-color;
+      color: $white;
+      @include md {
+        grid-column: 3 / 4;
+        width: 100%;
+      }
+      & span {
+        margin-right: $space-xs;
+      }
+      & div {
+        width: 24px;
+        height: 24px;
+        background: var(--arrow-white) center/contain no-repeat;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  grid-area: stepper;
+  @include md {
+    padding: 0;
+  }
+  &__step {
+    display: flex;
+    position: relative;
+    &--circle {
+      @extend %makeInnerCenter;
+      width: $space-xl;
+      height: $space-xl;
+      border-radius: 50%;
+      border: 1px solid var(--step-circle-unfinished-color);
+      @include md {
+        width: $space-lg;
+        height: $space-lg;
+      }
+      &-number {
+        font-size: $font-size-md;
+        color: var(--step-circle-unfinished-color);
+        @include md {
+          font-size: $font-size-xs;
+        }
+      }
+    }
+    &--info {
+      display: none;
+      @include lg {
+        display: block;
+        margin-left: ($space-basic / 2);
+        color: var(--step-circle-unfinished-color);
+      }
+    }
+    &--active {
+      .stepper__step--circle {
+        border-color: var(--stepActiveFinished-circleBorderColor);
+        background-color: var(--step-circle-bgc);
+      }
+      .stepper__step-circle-number {
+        color: var(--basic-color);
+      }
+      .stepper--line {
+        background-color: var(--basic-color);
+      }
+      .stepper__step--info {
+        color: var(--basic-color);
+      }
+    }
+    &--finished {
+      .stepper__step--circle {
+        background-color: $gray-7;
+        border-color: var(--stepActiveFinished-circleBorderColor);
+        &-number {
+          display: none;
+        }
+        &::after {
+          @include afterAndBeforeStyle(20px, 20px);
+          background: url("../images/icon-check.png") center/contain no-repeat;
+          @include md {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      .stepper__step--info {
+        color: var(--basic-color);
+      }
+      .stepper--line {
+        background-color: var(--basic-color);
+      }
+    }
+  }
+  &--line {
+    display: block;
+    min-width: 15%;
+    height: 2px;
+    background-color: var(--step-circle-unfinished-color);
   }
 }
 
