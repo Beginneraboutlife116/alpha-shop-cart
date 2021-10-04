@@ -5,6 +5,7 @@
 <p>And also, I try to practice webpack for bundling whole my scss, javascripts files.</p>
 <p>It takes time to have research about how to use webpack.</p>
 <p>And I have increase dark mode toggle to it.</p>
+<p><a href="https://beginneraboutlife116.github.io/alpha-shop-cart/">GitHub Page</a></p>
 
 <h2>Images</h2>
 <h3>Small-size</h3>
@@ -43,7 +44,7 @@
     <code>npm run dev</code>
   </li>
   <li>
-    <p>You can use http://localhost:8080 to see the result.</p>
-    <p>Or you can just watch the github page.</p>
+    <p>You can use <a>http://localhost:8080</a> to see the result.</p>
+    <p>Or you can just watch the <a href="https://beginneraboutlife116.github.io/alpha-shop-cart/">github page.</a></p>
   </li>
 </ol>
