@@ -262,7 +262,7 @@ body {
       ". . cart"
       "btn . cart";
   }
-  @include xl {
+  @include breakpoint(1301px) {
     grid-template-columns: 50% 10% 40%;
   }
   &__divider {

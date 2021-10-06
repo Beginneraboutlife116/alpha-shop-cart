@@ -423,7 +423,7 @@ body {
     grid-template: 48px 24px 64px 288px 48px 2px 24px 46px / 50% 5% 45%;
     grid-template-areas: ". . ." "stepper . cart" ". . cart" "form . cart" ". . cart" "divider . cart" ". . cart" "btn . cart"; } }
 
-@media (min-width: 1201px) {
+@media (min-width: 1301px) {
   .content {
     grid-template-columns: 50% 10% 40%; } }
 
