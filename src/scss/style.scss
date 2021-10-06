@@ -61,7 +61,7 @@ body {
     margin: 0 5%;
     padding-bottom: 60px 0 120px;
   }
-  @include xl {
+  @include breakpoint(1301px) {
     margin: 0 15%;
   }
   &__title {
@@ -92,7 +92,7 @@ body {
     left: 5%;
     right: 5%;
   }
-  @include xl {
+  @include breakpoint(1301px) {
     left: 15%;
     right: 15%;
   }
@@ -520,25 +520,25 @@ body {
       margin-bottom: 0;
     }
     &-img {
-      width: 100px;
+      flex: 100px 0 0;
       height: 100px;
     }
     &-info {
       display: flex;
-      align-items: end;
       justify-content: space-between;
       flex-direction: column;
-      align-items: end;
+      align-items: flex-end;
       color: var(--basic-color);
       @include lg {
-        width: 65%;
+        flex: 1 1;
+        margin-left: 5%;
         flex-direction: row;
-        align-items: start;
+        align-items: flex-start;
       }
       &-container {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: max-content;
         flex-direction: column;
         align-items: end;
         @include lg {
@@ -651,7 +651,7 @@ body {
     padding: 0 5%;
     background-color: var(--footer-bg);
   }
-  @include xl {
+  @include breakpoint(1301px) {
     padding: 0 15%;
   }
   &__container {
