@@ -72,6 +72,7 @@ body {
     color: var(--basic-color);
     @include md {
       margin-top: 5rem;
+      margin-bottom: 3rem;
       font-size: $font-size-xl;
     }
   }
@@ -245,9 +246,8 @@ body {
 .content {
   @include md {
     display: grid;
-    grid-template: 48px 24px 64px 288px 48px 2px 24px 46px / 50% 5% 45%;
+    grid-template: 24px 64px 288px 48px 2px 24px 46px / 50% 5% 45%;
     grid-template-areas:
-      ". . ."
       "stepper . cart"
       ". . cart"
       "form . cart"
